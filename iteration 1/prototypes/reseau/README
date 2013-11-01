@@ -1,0 +1,43 @@
+---PROTOTYPE RESEAU---
+
+SERVEUR : 
+
+  Le serveur "supporte" plusieurs clients ( c'est sale, mais ca marche. Je
+  suis conscient que ce n'est pas comme ca qu'il faudra faire ).
+
+  - ecoute sur localhost:8080
+  - lors d'une connection : 
+    _ creation d'un objet MyClient ( principalement une socket en fait )
+    _ les callbacks readyRead(), connected() et disconnected() sont reliés à 
+      cet objet et non directement au serveur
+    _ range le client dans la liste
+
+  - lorsque le serveur reçoit un message :
+    _ le client emetteur est directement retrouvé 
+      (callback fixée sur le MyClient correspondant)
+    _ Une fois le message totalement reçu, renvoie le bébé au serveur qui 
+      s'occupe du traitement ( on pourrait imaginer un message privé par ex )
+      Ici le message est renvoyé a tout le monde.
+
+  - lors d'une déconnexion :
+    _ fermeture socket
+    _ destruction client
+
+    C'est un peu réalisé a l'arrach ici. Mais bon le but du jeu est d'avoir 
+    une vision d'ensemble.
+
+CLIENT :
+  - ecoute sur localhost:8080 ( no shit sherlock )
+  - deux possibilité :
+    _ reception d'un message : affichage de celui-ci.
+    _ envoie d'un message : envoie + affichage.
+
+  J'ai des erreurs sur les callbacks au démarrage de l'appli, pourtant ca 
+  marche. C'est un peu mystérieux. De plus j'ai pas ces messages si je le 
+  lance par Qt ... encore un mystère, peut-être parce que j'ai utilisé le 
+  64bits
+
+C'est extrement basique, le seul vrai point manquant important : envoie d'un 
+objet et non d'un simple QString. Mais la serialization c'pas mon fort. Je
+regarderai plus tard.
+    
