@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     view.setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
     view.setDragMode(QGraphicsView::ScrollHandDrag);
 //! [5] //! [6]
-    view.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Colliding Mice"));
+    view.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Bat!"));
     view.resize(800, 600);
     view.show();
 
