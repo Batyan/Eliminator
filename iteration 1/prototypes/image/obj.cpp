@@ -33,7 +33,7 @@ QRectF obj::boundingRect() const
 
 void obj::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    painter->drawImage(0, 0, QImage("../protoDeplacementImage/img/BatSmall.png"), 0, 0, 20, 20);
+    painter->drawImage(0, 0, QImage(":img/BatSmall.png"), 0, 0, 20, 20);
 }
 
 

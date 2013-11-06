@@ -16,3 +16,6 @@ SOURCES += main.cpp\
     obj.cpp
 
 HEADERS  += obj.h
+
+RESOURCES += \
+    image.qrc

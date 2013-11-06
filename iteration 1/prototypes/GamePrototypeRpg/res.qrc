@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/characters.png</file>
+        <file>res/Ncp/01.png</file>
+        <file>res/Ncp/02.png</file>
+        <file>res/Ncp/03.png</file>
+        <file>res/Ncp/04.png</file>
+        <file>res/Ncp/05.png</file>
+        <file>res/Ncp/06.png</file>
+        <file>res/Ncp/07.png</file>
+        <file>res/Ncp/default.png</file>
+        <file>res/background.png</file>
+    </qresource>
+</RCC>

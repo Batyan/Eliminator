@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
     QGraphicsView view(&scene);
     view.setRenderHint(QPainter::Antialiasing);
-    view.setBackgroundBrush(QPixmap("../protoDeplacementImage/img/background.jpg"));
+    view.setBackgroundBrush(QPixmap(":img/background.jpg"));
 //! [4] //! [5]
     view.setCacheMode(QGraphicsView::CacheBackground);
     view.setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
