@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Eliminator++:  Fichier source de spriteimgmove.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Eliminator++
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">Documentation du cas d&#39;utilisation: déplacement d&#39;un personnage.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('spriteimgmove_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">spriteimgmove.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="spriteimgmove_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef SPRITEIMGMOVE_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SPRITEIMGMOVE_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sprite_img_move.html">SpriteImgMove</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#a270870d46461cb7904d83be657f3105b">   26</a></span>&#160;    QPixmap <a class="code" href="class_sprite_img_move.html#a270870d46461cb7904d83be657f3105b">sprite</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#a502a675fc0aab53ec5630d5c83fb9cbe">   28</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#a502a675fc0aab53ec5630d5c83fb9cbe">isWalking</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#a0195561c0c9009bd831d31bc553fb6e8">   29</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#a0195561c0c9009bd831d31bc553fb6e8">isLookingUp</a>; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#a2ab6431e817d558401cdee1f06cd3926">   30</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#a2ab6431e817d558401cdee1f06cd3926">isLookingLeft</a>; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#a2a01ec410f43d292943e314386effb28">   31</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#a2a01ec410f43d292943e314386effb28">isLookingRight</a>; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#a6932d3a39b9a0bbcadc5a3ae34d95bd4">   32</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#a6932d3a39b9a0bbcadc5a3ae34d95bd4">isLookingDown</a>; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_sprite_img_move.html#a6d9fd9ee6772f27e22e19e93cb412ce2">pImgDown</a>[3][2] = {{ 0, 0 }, { 1, 0 }, { 2, 0 }};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#ad3e2d73041b1f22a93033975ebb30f1e">   38</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_sprite_img_move.html#ad3e2d73041b1f22a93033975ebb30f1e">pImgLeft</a>[3][2] = {{ 0, 1 }, { 1, 1 }, { 2, 1 }};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#a3eaafb9abd5943bede79fead68061b91">   41</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_sprite_img_move.html#a3eaafb9abd5943bede79fead68061b91">pImgRight</a>[3][2]= {{ 0, 2 }, { 1, 2 }, { 2, 2 }};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_sprite_img_move.html#a9e394c5ee86bac459c5d761482f032a0">   44</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_sprite_img_move.html#a9e394c5ee86bac459c5d761482f032a0">pImgUp</a>[3][2] = {{ 0, 3 }, { 1, 3 }, { 2, 3 }};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_sprite_img_move.html#a6b17c58c0845d1e44864f33a0b77deff">SpriteImgMove</a>(QString pathSprite);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_sprite_img_move.html#adb2ef1b6dd94f11b40fbdd2984f547c2">~SpriteImgMove</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sprite_img_move.html#a6995a19f4034fdd5fc7b0f238f8ad63a">render</a>(qreal x, qreal y, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, QPainter *painter,<span class="keywordtype">int</span> dirMove, <span class="keywordtype">int</span> animFrame);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#ac62b49efc254b8a4f2a2ba88ea52144f">getIsWalking</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sprite_img_move.html#a81c9abb9e9a17205a9d5e4602fa3603e">setIsWalking</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#a655d8f47deb569bd56303155af3f1424">getIsLookingUp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sprite_img_move.html#a323ce7c85fd46ebf1cb5f966805ec54c">setIsLookingUp</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#a471842da1b8d72e573df396dee556001">getIsLookingLeft</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sprite_img_move.html#acf67ff7f6ebe714d635ce762776290ef">setIsLookingLeft</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#ac3e91deb3eab8866314b5e93f736e46d">getIsLookingRight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sprite_img_move.html#a96c4ede2d5e50be691d2ac15a79ff06b">setIsLookingRight</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sprite_img_move.html#aa845bc5b164ea103230eab58f1253161">getIsLookingDown</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sprite_img_move.html#afd0605584ed84d7493fa7bed8dbf5639">setIsLookingDown</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif // SPRITEIMGMOVE_H</span></div>
+<div class="ttc" id="class_sprite_img_move_html_ad3e2d73041b1f22a93033975ebb30f1e"><div class="ttname"><a href="class_sprite_img_move.html#ad3e2d73041b1f22a93033975ebb30f1e">SpriteImgMove::pImgLeft</a></div><div class="ttdeci">const int pImgLeft[3][2]</div><div class="ttdoc">On définie une matrice d&amp;#39;animation du déplacement à gauche. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00038">spriteimgmove.h:38</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_acf67ff7f6ebe714d635ce762776290ef"><div class="ttname"><a href="class_sprite_img_move.html#acf67ff7f6ebe714d635ce762776290ef">SpriteImgMove::setIsLookingLeft</a></div><div class="ttdeci">void setIsLookingLeft(bool value)</div><div class="ttdoc">setIsLookingLeft </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00098">spriteimgmove.cpp:98</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a2a01ec410f43d292943e314386effb28"><div class="ttname"><a href="class_sprite_img_move.html#a2a01ec410f43d292943e314386effb28">SpriteImgMove::isLookingRight</a></div><div class="ttdeci">bool isLookingRight</div><div class="ttdoc">Définie si le personnage regard à droite. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00031">spriteimgmove.h:31</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a323ce7c85fd46ebf1cb5f966805ec54c"><div class="ttname"><a href="class_sprite_img_move.html#a323ce7c85fd46ebf1cb5f966805ec54c">SpriteImgMove::setIsLookingUp</a></div><div class="ttdeci">void setIsLookingUp(bool value)</div><div class="ttdoc">setIsLookingUp </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00088">spriteimgmove.cpp:88</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a0195561c0c9009bd831d31bc553fb6e8"><div class="ttname"><a href="class_sprite_img_move.html#a0195561c0c9009bd831d31bc553fb6e8">SpriteImgMove::isLookingUp</a></div><div class="ttdeci">bool isLookingUp</div><div class="ttdoc">Définie si le personnage regard en haut. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00029">spriteimgmove.h:29</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a96c4ede2d5e50be691d2ac15a79ff06b"><div class="ttname"><a href="class_sprite_img_move.html#a96c4ede2d5e50be691d2ac15a79ff06b">SpriteImgMove::setIsLookingRight</a></div><div class="ttdeci">void setIsLookingRight(bool value)</div><div class="ttdoc">setIsLookingRight </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00108">spriteimgmove.cpp:108</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a6b17c58c0845d1e44864f33a0b77deff"><div class="ttname"><a href="class_sprite_img_move.html#a6b17c58c0845d1e44864f33a0b77deff">SpriteImgMove::SpriteImgMove</a></div><div class="ttdeci">SpriteImgMove(QString pathSprite)</div><div class="ttdoc">Constructeur SpriteImgMove. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00012">spriteimgmove.cpp:12</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a6995a19f4034fdd5fc7b0f238f8ad63a"><div class="ttname"><a href="class_sprite_img_move.html#a6995a19f4034fdd5fc7b0f238f8ad63a">SpriteImgMove::render</a></div><div class="ttdeci">void render(qreal x, qreal y, int width, int height, QPainter *painter, int dirMove, int animFrame)</div><div class="ttdoc">Permet de dessiner l&amp;#39;animation du sprite du personnage. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00025">spriteimgmove.cpp:25</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a2ab6431e817d558401cdee1f06cd3926"><div class="ttname"><a href="class_sprite_img_move.html#a2ab6431e817d558401cdee1f06cd3926">SpriteImgMove::isLookingLeft</a></div><div class="ttdeci">bool isLookingLeft</div><div class="ttdoc">Définie si le personnage regard à gauche. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00030">spriteimgmove.h:30</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a9e394c5ee86bac459c5d761482f032a0"><div class="ttname"><a href="class_sprite_img_move.html#a9e394c5ee86bac459c5d761482f032a0">SpriteImgMove::pImgUp</a></div><div class="ttdeci">const int pImgUp[3][2]</div><div class="ttdoc">On définie une matrice d&amp;#39;animation du déplacement en haut. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00044">spriteimgmove.h:44</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html"><div class="ttname"><a href="class_sprite_img_move.html">SpriteImgMove</a></div><div class="ttdoc">La classe SpriteImgMove. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00023">spriteimgmove.h:23</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_adb2ef1b6dd94f11b40fbdd2984f547c2"><div class="ttname"><a href="class_sprite_img_move.html#adb2ef1b6dd94f11b40fbdd2984f547c2">SpriteImgMove::~SpriteImgMove</a></div><div class="ttdeci">~SpriteImgMove()</div><div class="ttdoc">Destructeur ~SpriteImgMove. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00019">spriteimgmove.cpp:19</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a270870d46461cb7904d83be657f3105b"><div class="ttname"><a href="class_sprite_img_move.html#a270870d46461cb7904d83be657f3105b">SpriteImgMove::sprite</a></div><div class="ttdeci">QPixmap sprite</div><div class="ttdoc">Contient le sprite du personnage. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00026">spriteimgmove.h:26</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a3eaafb9abd5943bede79fead68061b91"><div class="ttname"><a href="class_sprite_img_move.html#a3eaafb9abd5943bede79fead68061b91">SpriteImgMove::pImgRight</a></div><div class="ttdeci">const int pImgRight[3][2]</div><div class="ttdoc">On définie une matrice d&amp;#39;animation du déplacement à droite. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00041">spriteimgmove.h:41</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a81c9abb9e9a17205a9d5e4602fa3603e"><div class="ttname"><a href="class_sprite_img_move.html#a81c9abb9e9a17205a9d5e4602fa3603e">SpriteImgMove::setIsWalking</a></div><div class="ttdeci">void setIsWalking(bool value)</div><div class="ttdoc">setIsWalking </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00078">spriteimgmove.cpp:78</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a655d8f47deb569bd56303155af3f1424"><div class="ttname"><a href="class_sprite_img_move.html#a655d8f47deb569bd56303155af3f1424">SpriteImgMove::getIsLookingUp</a></div><div class="ttdeci">bool getIsLookingUp() const </div><div class="ttdoc">getIsLookingUp </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00083">spriteimgmove.cpp:83</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_afd0605584ed84d7493fa7bed8dbf5639"><div class="ttname"><a href="class_sprite_img_move.html#afd0605584ed84d7493fa7bed8dbf5639">SpriteImgMove::setIsLookingDown</a></div><div class="ttdeci">void setIsLookingDown(bool value)</div><div class="ttdoc">setIsLookingDown </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00118">spriteimgmove.cpp:118</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_ac3e91deb3eab8866314b5e93f736e46d"><div class="ttname"><a href="class_sprite_img_move.html#ac3e91deb3eab8866314b5e93f736e46d">SpriteImgMove::getIsLookingRight</a></div><div class="ttdeci">bool getIsLookingRight() const </div><div class="ttdoc">getIsLookingRight </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00103">spriteimgmove.cpp:103</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a6932d3a39b9a0bbcadc5a3ae34d95bd4"><div class="ttname"><a href="class_sprite_img_move.html#a6932d3a39b9a0bbcadc5a3ae34d95bd4">SpriteImgMove::isLookingDown</a></div><div class="ttdeci">bool isLookingDown</div><div class="ttdoc">Définie si le personnage regard en bas. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00032">spriteimgmove.h:32</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_aa845bc5b164ea103230eab58f1253161"><div class="ttname"><a href="class_sprite_img_move.html#aa845bc5b164ea103230eab58f1253161">SpriteImgMove::getIsLookingDown</a></div><div class="ttdeci">bool getIsLookingDown() const </div><div class="ttdoc">getIsLookingDown </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00113">spriteimgmove.cpp:113</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a6d9fd9ee6772f27e22e19e93cb412ce2"><div class="ttname"><a href="class_sprite_img_move.html#a6d9fd9ee6772f27e22e19e93cb412ce2">SpriteImgMove::pImgDown</a></div><div class="ttdeci">const int pImgDown[3][2]</div><div class="ttdoc">On définie une matrice d&amp;#39;animation du déplacement en bas. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00035">spriteimgmove.h:35</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a471842da1b8d72e573df396dee556001"><div class="ttname"><a href="class_sprite_img_move.html#a471842da1b8d72e573df396dee556001">SpriteImgMove::getIsLookingLeft</a></div><div class="ttdeci">bool getIsLookingLeft() const </div><div class="ttdoc">getIsLookingLeft </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00093">spriteimgmove.cpp:93</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_a502a675fc0aab53ec5630d5c83fb9cbe"><div class="ttname"><a href="class_sprite_img_move.html#a502a675fc0aab53ec5630d5c83fb9cbe">SpriteImgMove::isWalking</a></div><div class="ttdeci">bool isWalking</div><div class="ttdoc">Définie si le personnage bouge. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8h_source.html#l00028">spriteimgmove.h:28</a></div></div>
+<div class="ttc" id="class_sprite_img_move_html_ac62b49efc254b8a4f2a2ba88ea52144f"><div class="ttname"><a href="class_sprite_img_move.html#ac62b49efc254b8a4f2a2ba88ea52144f">SpriteImgMove::getIsWalking</a></div><div class="ttdeci">bool getIsWalking() const </div><div class="ttdoc">SpriteImgMove. </div><div class="ttdef"><b>Definition:</b> <a href="spriteimgmove_8cpp_source.html#l00073">spriteimgmove.cpp:73</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="spriteimgmove_8h.html">spriteimgmove.h</a></li>
+    <li class="footer">Généré le Dimanche Novembre 10 2013 18:11:51 pour Eliminator++ par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
+</body>
+</html>

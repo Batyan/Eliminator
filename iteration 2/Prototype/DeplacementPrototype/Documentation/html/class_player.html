@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.5"/>
+<title>Eliminator++: Référence de la classe Player</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Eliminator++
+   &#160;<span id="projectnumber">v1.0</span>
+   </div>
+   <div id="projectbrief">Documentation du cas d&#39;utilisation: déplacement d&#39;un personnage.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_player.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pro-methods">Fonctions membres protégées</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="class_player-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe Player</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>La classe <a class="el" href="class_player.html" title="La classe Player hérite de Entity. Contient la définition d&#39;un player. ">Player</a> hérite de <a class="el" href="class_entity.html" title="La classe Entity hérite de QGraphicsItem. Contient la définition d&#39;une Entity. ">Entity</a>.<br/>
+Contient la définition d'un player.  
+ <a href="class_player.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="player_8h_source.html">player.h</a>&gt;</code></p>
+<div class="dynheader">
+Graphe d'héritage de Player:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_player.png" usemap="#Player_map" alt=""/>
+  <map id="Player_map" name="Player_map">
+<area href="class_entity.html" title="La classe Entity hérite de QGraphicsItem. Contient la définition d&#39;une Entity. " alt="Entity" shape="rect" coords="0,56,95,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8">Player</a> ()</td></tr>
+<tr class="memdesc:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur <a class="el" href="class_player.html" title="La classe Player hérite de Entity. Contient la définition d&#39;un player. ">Player</a> par défaut.  <a href="#affe0cc3cb714f6deb4e62f0c0d3f1fd8">Plus de détails...</a><br/></td></tr>
+<tr class="separator:affe0cc3cb714f6deb4e62f0c0d3f1fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d4ce473958b5792edb5e5ae45dfd89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab9d4ce473958b5792edb5e5ae45dfd89">Player</a> (qreal x, qreal y, int width, int height, QString crustomPathSprite=NULL)</td></tr>
+<tr class="memdesc:ab9d4ce473958b5792edb5e5ae45dfd89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur <a class="el" href="class_player.html" title="La classe Player hérite de Entity. Contient la définition d&#39;un player. ">Player</a>.  <a href="#ab9d4ce473958b5792edb5e5ae45dfd89">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab9d4ce473958b5792edb5e5ae45dfd89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d1d7a8488bc2ed3a9b317dcf17b39c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a02d1d7a8488bc2ed3a9b317dcf17b39c">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)</td></tr>
+<tr class="memdesc:a02d1d7a8488bc2ed3a9b317dcf17b39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet l'affichage du player avec ces animations correspondantes.  <a href="#a02d1d7a8488bc2ed3a9b317dcf17b39c">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a02d1d7a8488bc2ed3a9b317dcf17b39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4e62b48133ef60fdd880c5dc834c71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a9d4e62b48133ef60fdd880c5dc834c71">advance</a> (int phase)</td></tr>
+<tr class="memdesc:a9d4e62b48133ef60fdd880c5dc834c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet le rafraîchissement de l'objet.  <a href="#a9d4e62b48133ef60fdd880c5dc834c71">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a9d4e62b48133ef60fdd880c5dc834c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e85189b099c86221a8ad62f3173980"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a40e85189b099c86221a8ad62f3173980">boundingRect</a> () const </td></tr>
+<tr class="memdesc:a40e85189b099c86221a8ad62f3173980"><td class="mdescLeft">&#160;</td><td class="mdescRight">boundingRect  <a href="#a40e85189b099c86221a8ad62f3173980">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a40e85189b099c86221a8ad62f3173980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e42fa97927b30f6bef13ab4b7870caa"><td class="memItemLeft" align="right" valign="top">QPainterPath&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a2e42fa97927b30f6bef13ab4b7870caa">shape</a> () const </td></tr>
+<tr class="memdesc:a2e42fa97927b30f6bef13ab4b7870caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">shape  <a href="#a2e42fa97927b30f6bef13ab4b7870caa">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a2e42fa97927b30f6bef13ab4b7870caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a749d2c00e1fe0f5c2746f7505a58c062"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a749d2c00e1fe0f5c2746f7505a58c062"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a> ()</td></tr>
+<tr class="memdesc:a749d2c00e1fe0f5c2746f7505a58c062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur ~Player. <br/></td></tr>
+<tr class="separator:a749d2c00e1fe0f5c2746f7505a58c062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_entity"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_entity')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques inherited from <a class="el" href="class_entity.html">Entity</a></td></tr>
+<tr class="memitem:af76b6f063d11474ccfd761c446f188fe inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#af76b6f063d11474ccfd761c446f188fe">Entity</a> (qreal x, qreal y, int width, int height)</td></tr>
+<tr class="memdesc:af76b6f063d11474ccfd761c446f188fe inherit pub_methods_class_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur <a class="el" href="class_entity.html" title="La classe Entity hérite de QGraphicsItem. Contient la définition d&#39;une Entity. ">Entity</a>.  <a href="#af76b6f063d11474ccfd761c446f188fe">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af76b6f063d11474ccfd761c446f188fe inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9ce6e77353762b574b54005da9fbdc9 inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#ab9ce6e77353762b574b54005da9fbdc9">getWidth</a> () const </td></tr>
+<tr class="memdesc:ab9ce6e77353762b574b54005da9fbdc9 inherit pub_methods_class_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de <a class="el" href="class_entity.html" title="La classe Entity hérite de QGraphicsItem. Contient la définition d&#39;une Entity. ">Entity</a>.  <a href="#ab9ce6e77353762b574b54005da9fbdc9">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab9ce6e77353762b574b54005da9fbdc9 inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f56ce161d3912e8e512b3397428e2e inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#ad7f56ce161d3912e8e512b3397428e2e">getHeight</a> () const </td></tr>
+<tr class="memdesc:ad7f56ce161d3912e8e512b3397428e2e inherit pub_methods_class_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de <a class="el" href="class_entity.html" title="La classe Entity hérite de QGraphicsItem. Contient la définition d&#39;une Entity. ">Entity</a>.  <a href="#ad7f56ce161d3912e8e512b3397428e2e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ad7f56ce161d3912e8e512b3397428e2e inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8768bb33b51320b923897dd29ddade54 inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a8768bb33b51320b923897dd29ddade54">getX</a> () const </td></tr>
+<tr class="memdesc:a8768bb33b51320b923897dd29ddade54 inherit pub_methods_class_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de <a class="el" href="class_entity.html" title="La classe Entity hérite de QGraphicsItem. Contient la définition d&#39;une Entity. ">Entity</a>.  <a href="#a8768bb33b51320b923897dd29ddade54">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a8768bb33b51320b923897dd29ddade54 inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f35ec81d572129308c4f6d1488d87e7 inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a7f35ec81d572129308c4f6d1488d87e7">getY</a> () const </td></tr>
+<tr class="memdesc:a7f35ec81d572129308c4f6d1488d87e7 inherit pub_methods_class_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter de <a class="el" href="class_entity.html" title="La classe Entity hérite de QGraphicsItem. Contient la définition d&#39;une Entity. ">Entity</a>.  <a href="#a7f35ec81d572129308c4f6d1488d87e7">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a7f35ec81d572129308c4f6d1488d87e7 inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf6d3f7cb1b2ba029b6b048a395cc8ae inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf6d3f7cb1b2ba029b6b048a395cc8ae"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae">~Entity</a> ()</td></tr>
+<tr class="memdesc:adf6d3f7cb1b2ba029b6b048a395cc8ae inherit pub_methods_class_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desctucteur ~Entity. <br/></td></tr>
+<tr class="separator:adf6d3f7cb1b2ba029b6b048a395cc8ae inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Fonctions membres protégées</h2></td></tr>
+<tr class="memitem:a4d269c4118c29b0ee85c1e0f674260ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a4d269c4118c29b0ee85c1e0f674260ee">keyPressEvent</a> (QKeyEvent *event)</td></tr>
+<tr class="memdesc:a4d269c4118c29b0ee85c1e0f674260ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyPressEvent  <a href="#a4d269c4118c29b0ee85c1e0f674260ee">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a4d269c4118c29b0ee85c1e0f674260ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f3d5dea93b5699138eba6f4f420b27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a09f3d5dea93b5699138eba6f4f420b27">keyReleaseEvent</a> (QKeyEvent *event)</td></tr>
+<tr class="memdesc:a09f3d5dea93b5699138eba6f4f420b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyReleaseEvent  <a href="#a09f3d5dea93b5699138eba6f4f420b27">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a09f3d5dea93b5699138eba6f4f420b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a16d123f0de3c034620edafcc8124bdc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a16d123f0de3c034620edafcc8124bdc7">move</a> (int xa, int ya)</td></tr>
+<tr class="memdesc:a16d123f0de3c034620edafcc8124bdc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le déplacement par rapport aux coordonnées x et y données.  <a href="#a16d123f0de3c034620edafcc8124bdc7">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a16d123f0de3c034620edafcc8124bdc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a5346a037001de78c9c4fea19db188b73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5346a037001de78c9c4fea19db188b73"></a>
+<a class="el" href="class_sprite_img_move.html">SpriteImgMove</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a5346a037001de78c9c4fea19db188b73">pSpriteMove</a></td></tr>
+<tr class="memdesc:a5346a037001de78c9c4fea19db188b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur sur <a class="el" href="class_sprite_img_move.html" title="La classe SpriteImgMove. ">SpriteImgMove</a> qui gère l'affichage d'une animation. <br/></td></tr>
+<tr class="separator:a5346a037001de78c9c4fea19db188b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1042cc6e3b19d6f57104cabc29b3573"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1042cc6e3b19d6f57104cabc29b3573"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af1042cc6e3b19d6f57104cabc29b3573">dirMove</a></td></tr>
+<tr class="memdesc:af1042cc6e3b19d6f57104cabc29b3573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur de la direction du mouvement à faire. <br/></td></tr>
+<tr class="separator:af1042cc6e3b19d6f57104cabc29b3573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0a180668b1678439d0d2939c36d6d9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0a180668b1678439d0d2939c36d6d9c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af0a180668b1678439d0d2939c36d6d9c">animFrame</a></td></tr>
+<tr class="memdesc:af0a180668b1678439d0d2939c36d6d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur de la frame d'animation à faire. <br/></td></tr>
+<tr class="separator:af0a180668b1678439d0d2939c36d6d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae27ca6f9a85d9a2ebed1d054d155e72e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae27ca6f9a85d9a2ebed1d054d155e72e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ae27ca6f9a85d9a2ebed1d054d155e72e">animDelta</a></td></tr>
+<tr class="memdesc:ae27ca6f9a85d9a2ebed1d054d155e72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur de la frame par second. <br/></td></tr>
+<tr class="separator:ae27ca6f9a85d9a2ebed1d054d155e72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81a1af87c62692c39fef338d0e8576e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81a1af87c62692c39fef338d0e8576e5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a81a1af87c62692c39fef338d0e8576e5">animTime</a></td></tr>
+<tr class="memdesc:a81a1af87c62692c39fef338d0e8576e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse que prendra une animation de déplacement dans le temps. <br/></td></tr>
+<tr class="separator:a81a1af87c62692c39fef338d0e8576e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>La classe <a class="el" href="class_player.html" title="La classe Player hérite de Entity. Contient la définition d&#39;un player. ">Player</a> hérite de <a class="el" href="class_entity.html" title="La classe Entity hérite de QGraphicsItem. Contient la définition d&#39;une Entity. ">Entity</a>.<br/>
+Contient la définition d'un player. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Guillaume Rasolo </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="player_8h_source.html#l00044">44</a> du fichier <a class="el" href="player_8h_source.html">player.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="affe0cc3cb714f6deb4e62f0c0d3f1fd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Player::Player </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur <a class="el" href="class_player.html" title="La classe Player hérite de Entity. Contient la définition d&#39;un player. ">Player</a> par défaut. </p>
+<p>On initialise le player avec les paramètres par défaut. </p>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00018">18</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9d4ce473958b5792edb5e5ae45dfd89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Player::Player </td>
+          <td>(</td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>crustomPathSprite</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur <a class="el" href="class_player.html" title="La classe Player hérite de Entity. Contient la définition d&#39;un player. ">Player</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Coordonnée x qui sera donner au player. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordonnée y qui sera donner au player. </td></tr>
+    <tr><td class="paramname">width</td><td>Largeur qui sera donner au player. </td></tr>
+    <tr><td class="paramname">height</td><td>Hauteur qui sera donner au player. </td></tr>
+    <tr><td class="paramname">crustomPathSprite</td><td>Chemin du sprite qui correspond au player. Initialiser à NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00039">39</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a9d4e62b48133ef60fdd880c5dc834c71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::advance </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>phase</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet le rafraîchissement de l'objet. </p>
+<p>Advance() est appelée que lorsque la scène lui dit de se rafraîchir. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">phase</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00076">76</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a40e85189b099c86221a8ad62f3173980"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRectF Player::boundingRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>boundingRect </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La dimension du rectangle. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00122">122</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4d269c4118c29b0ee85c1e0f674260ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>keyPressEvent </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Événement clavier </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00172">172</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09f3d5dea93b5699138eba6f4f420b27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::keyReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>keyReleaseEvent </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Événement clavier </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00191">191</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16d123f0de3c034620edafcc8124bdc7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::move </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ya</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gère le déplacement par rapport aux coordonnées x et y données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xa</td><td>Coordonnée x de déplacement. </td></tr>
+    <tr><td class="paramname">ya</td><td>Coordonnée y de déplacement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00140">140</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a02d1d7a8488bc2ed3a9b317dcf17b39c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet l'affichage du player avec ces animations correspondantes. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">painter</td><td>Pointeur du painter de la fenêtre qui servira a dessiner. </td></tr>
+    <tr><td class="paramname">option</td><td></td></tr>
+    <tr><td class="paramname">widget</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00067">67</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e42fa97927b30f6bef13ab4b7870caa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPainterPath Player::shape </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>shape </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La forme de l'objet player comme un QPainterPath en coordonnées locales.</dd></dl>
+<p>La fonction est très utilisée pour les collisions. </p>
+
+<p>Définition à la ligne <a class="el" href="player_8cpp_source.html#l00127">127</a> du fichier <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li><a class="el" href="player_8h_source.html">player.h</a></li>
+<li><a class="el" href="player_8cpp_source.html">player.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_player.html">Player</a></li>
+    <li class="footer">Généré le Dimanche Novembre 10 2013 18:11:51 pour Eliminator++ par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
+  </ul>
+</div>
+</body>
+</html>
