@@ -1,3 +1,13 @@
+/**
+ * \file clavier.cpp
+ * \brief Fichier clavier.cpp.
+ * \author Michael Plong
+ * \version 1.0
+ * \date 02 novembre 2013
+ *
+ *
+ */
+
 #include <QDebug>
 
 #include "clavier.h"
@@ -15,45 +25,56 @@ Clavier::~Clavier()
     delete ui;
 }
 
-bool upPressed = false;
-
+ 	/*!
+     *  \brief Fonction keyPressEvent
+     *
+     *  Fonction appelé à chaque fois qu'une touche est enfoncée
+		et une nouvelle fois quand une touche est restée maintenue suffisamment longtemps.
+     *
+     *  \param event : la fonction prend un QKeyEvent en parametre.
+	 *
+     */
 void Clavier::keyPressEvent(QKeyEvent *event)
 {
     qDebug() << event->key();
 
-    do{
         switch (event->key())
         {
          case Qt::Key_Left:
             //upPressed = true;
             event->accept();
-            qWarning("key_Left Press!!");
+            qWarning("key_Left Press!!");/*!< fleche gauche presser */
              break;
          case Qt::Key_Right:
             //upPressed = true;
             event->accept();
-            qWarning("key_Right Press!!");
+            qWarning("key_Right Press!!");/*!< fleche droite presser */
              break;
          case Qt::Key_Down:
             //upPressed = true;
             event->accept();
-            qWarning("key_Down Press!!");
+            qWarning("key_Down Press!!");/*!< fleche bas presser */
              break;
          case Qt::Key_Up:
             //upPressed = true;
             event->accept();
-            qWarning("key_Up Press!!");
+            qWarning("key_Up Press!!");/*!< fleche haute presser */
              break;
-         case Qt::Key_Escape:   // si c'est echape on quitte
+         case Qt::Key_Escape:   
             close();
          default: QWidget::keyPressEvent(event);
              break;
         }
-    }
-    while(upPressed);
 
 }
-
+	/*!
+     *  \brief Fonction keyPressEvent
+     *
+     *  Fonction appelé à chaque fois qu'une touche est relâchée et tant qu'elle est maintenue enfoncée.
+     *
+     *  \param event : la fonction prend un QKeyEvent en parametre.
+	 *
+     */
 void Clavier::keyReleaseEvent(QKeyEvent *event)
 {
      if(event->key() == Qt::Key_Up)
