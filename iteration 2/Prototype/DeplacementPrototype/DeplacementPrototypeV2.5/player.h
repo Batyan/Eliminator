@@ -34,6 +34,7 @@
 #define DEFAULT_ANIME_FRAME 2
 
 class SpriteImgMove;
+class Map;
 
 /**
  * @author Guillaume Rasolo
@@ -52,6 +53,8 @@ private:
     int animFrame; /*!< @brief Valeur de la frame d'animation à faire. */
     int animDelta; /*!< @brief Valeur de la frame par second. */
     int animTime; /*!< @brief Vitesse que prendra une animation de déplacement dans le temps. */
+
+    Map* curMap;
 
 public:
     /**

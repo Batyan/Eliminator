@@ -18,7 +18,9 @@ SOURCES += main.cpp\
     player.cpp \
     gamewindow.cpp \
     entity.cpp \
-    spriteimgmove.cpp
+    spriteimgmove.cpp \
+    cell.cpp \
+    map.cpp
 
 HEADERS  += \
     gamescene.h \
@@ -27,7 +29,9 @@ HEADERS  += \
     gamewindow.h \
     entity.h \
     directionmove.h \
-    spriteimgmove.h
+    spriteimgmove.h \
+    cell.h \
+    map.h
 
 FORMS    +=
 

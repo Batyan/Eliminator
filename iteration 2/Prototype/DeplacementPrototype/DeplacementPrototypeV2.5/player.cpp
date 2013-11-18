@@ -14,6 +14,8 @@
 #include "directionmove.h"
 #include "spriteimgmove.h"
 
+#include "map.h"
+
 
 Player::Player():
     Entity(150,150,DEFAULT_P_WIDTH,DEFAULT_P_HEIGHT),dirMove(0),
@@ -34,6 +36,8 @@ Player::Player():
 
     /*On définie que player est l'objet qui possède le focus des events envoyer par la scène.*/
     setFocus();
+
+    this->curMap = new Map();
 }
 
 Player::Player(qreal x, qreal y, int width, int height, QString crustomPathSprite)
@@ -61,6 +65,7 @@ Player::Player(qreal x, qreal y, int width, int height, QString crustomPathSprit
     /*On définie que player est l'objet qui possède le focus des events envoyés par la scène.*/
     setFocus();
 
+    this->curMap = new Map();
 }
 
 
@@ -139,6 +144,8 @@ Player::~Player()
 
 void Player::move(int xa, int ya)
 {
+    if (this->curMap->canMove(this, mapToScene(xa, ya)))
+    {
     /* On déplace le player de manière récursive tant que celui-ci veut bouger.*/
     if(xa != 0 && ya != 0){
         move(xa,0);
@@ -165,7 +172,7 @@ void Player::move(int xa, int ya)
 
     /*On change les coordonnées de l'objet player par rapport à la scène.*/
     setPos(mapToScene(xa,ya));
-
+    }
 }
 
 
