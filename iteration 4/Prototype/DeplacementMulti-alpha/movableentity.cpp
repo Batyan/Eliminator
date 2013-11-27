@@ -5,6 +5,7 @@
   *@version 1.0
   */
 
+#include "directionmove.h"
 #include "movableentity.h"
 
 MovableEntity::MovableEntity(qreal x, qreal y, int width, int height)
@@ -63,6 +64,30 @@ qreal MovableEntity::getSpeedWalking() const
 void MovableEntity::setSpeedWalking(const qreal &value)
 {
     speedWalking = value;
+}
+
+void MovableEntity::move(qreal xa, qreal ya)
+{
+    if(ya > 0){
+        setDirMove(DIR_DOWN_MOVING);
+    }
+
+    if(ya < 0){
+        setDirMove(DIR_UP_MOVING);
+    }
+
+    if(xa > 0){
+        setDirMove(DIR_RIGHT_MOVING);
+    }
+
+    if(xa < 0){
+        setDirMove(DIR_LEFT_MOVING);
+    }
+
+    /*On change les coordonnées de l'objet player par rapport à la scène.*/
+
+   setPos(mapToScene(xa,ya));
+
 }
 
 MovableEntity::~MovableEntity(){}

@@ -14,9 +14,11 @@
 
 #include <QString>
 #include <QGraphicsScene>
+#include <QKeyEvent>
 
 #include "xmltiledmap.h"
 #include "tile.h"
+#include "player.h"
 
 class MovableEntity;
 
@@ -76,6 +78,9 @@ protected:
      */
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
+    void keyPressEvent(QKeyEvent *event);
+
+    void keyReleaseEvent(QKeyEvent *event);
 public slots:
     /**
      * @brief fonction advance
@@ -90,6 +95,8 @@ private:
      * @details Permet de charger un niveau.
      */
     void loadWorld();
+signals:
+    void sendPos(qreal,qreal);
 
 };
 

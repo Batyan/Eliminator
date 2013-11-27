@@ -70,7 +70,10 @@ void server::on_readyRead()
 
     QVariant variant(in);
 
+    qDebug() << "readyRead";
+
     if(variant.canConvert<PlayerLight>()){
+        variant.value<PlayerLight>().print();
         sendMessageOthers(variant,socket);
     }
 

@@ -4,7 +4,7 @@
 #include "player.h"
 
 #include "levelscene.h"
-
+#include "spriteimgmove.h"
 
 LevelScene::LevelScene()
     :QGraphicsScene()
@@ -128,10 +128,13 @@ void LevelScene::addPlayer(int id,bool isLocal)
 
     addItem(newplayer);
 
+
     if(isLocal)
         player = newplayer;
     else
         otherPlayers << newplayer;
+
+    setFocusItem(player);
 
 }
 
@@ -147,14 +150,80 @@ void LevelScene::removePlayer(int id)
         }
 }
 
-void LevelScene::movePlayer(int id, qreal x, qreal y)
+void LevelScene::movePlayer(int id, qreal xa, qreal ya)
 {
     int i;
 
     for(i=0;i<otherPlayers.size();i++)
         if(otherPlayers[i]->id == id){
-            otherPlayers[i]->moveBy(x,y);
+            otherPlayers[i]->pSpriteMove->setIsWalking(false);
+            otherPlayers[i]->pSpriteMove->setIsLookingRight(false);
+            otherPlayers[i]->pSpriteMove->setIsLookingLeft(false);
+            otherPlayers[i]->pSpriteMove->setIsLookingDown(false);
+            otherPlayers[i]->pSpriteMove->setIsLookingUp(false);
+            if(xa == 0 && ya == 0){
+                qDebug() << "TRUUUUUUUUUUUUUUUUUUUUUUE";
+            }
+            else{
+                if(xa > 0){
+                    otherPlayers[i]->pSpriteMove->setIsLookingRight(true);
+                }
+
+                if(xa < 0){
+                     otherPlayers[i]->pSpriteMove->setIsLookingLeft(true);
+                }
+
+                if(ya > 0){
+                    otherPlayers[i]->pSpriteMove->setIsLookingDown(true);
+                }
+
+                if(ya < 0){
+                     otherPlayers[i]->pSpriteMove->setIsLookingUp(true);
+                }
+
+                otherPlayers[i]->pSpriteMove->setIsWalking(true);
+            }
+
+
+            qDebug() << "pwet" << i << id << xa << ya;
             break;
         }
-    qDebug() << "pwet";
 }
+
+void LevelScene::keyPressEvent(QKeyEvent *event)
+{
+    qreal ya=0,xa=0;
+    if(event->key() == Qt::Key_Up){
+        ya -= 2;
+    }else if(event->key() == Qt::Key_Down){
+        ya += 2;
+    }else if(event->key() == Qt::Key_Left){
+        xa -= 2;
+    }else if(event->key() == Qt::Key_Right){
+        xa += 2;
+    }
+
+    emit sendPos(xa,ya);
+
+    qDebug() << "press";
+
+    QGraphicsScene::keyPressEvent(event);
+}
+
+void LevelScene::keyReleaseEvent(QKeyEvent *event)
+{
+    qreal ya=0,xa=0;
+    if(   event->key() == Qt::Key_Up
+       || event->key() == Qt::Key_Down
+       || event->key() == Qt::Key_Left
+       || event->key() == Qt::Key_Right)
+    {
+
+    }
+
+    emit sendPos(xa,ya);
+    qDebug() << "press";
+
+    QGraphicsScene::keyReleaseEvent(event);
+}
+

@@ -34,7 +34,7 @@ private slots:
     void on_disconnected();
     void on_readyRead();
     void on_error(QAbstractSocket::SocketError socketError);
-    void on_tick();
+    void on_tick(qreal x, qreal y);
 };
 
 #endif // GAMEMULTI_H

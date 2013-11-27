@@ -140,40 +140,6 @@ Player::~Player()
 }
 
 
-void Player::move(qreal xa, qreal ya)
-{
-    /* On déplace le player de manière récursive tant que celui-ci veut bouger.*/
-    if(xa != 0 && ya != 0){
-        move(xa,0);
-        move(0,ya);
-        return;
-    }
-
-    /* On définie le sens de déplacement*/
-    if(ya > 0){
-        setDirMove(DIR_DOWN_MOVING);
-    }
-
-    if(ya < 0){
-        setDirMove(DIR_UP_MOVING);
-    }
-
-    if(xa > 0){
-        setDirMove(DIR_RIGHT_MOVING);
-    }
-
-    if(xa < 0){
-        setDirMove(DIR_LEFT_MOVING);
-    }
-
-    /*On change les coordonnées de l'objet player par rapport à la scène.*/
-
-   setPos(mapToScene(xa,ya));
-
-
-}
-
-
 void Player::keyPressEvent(QKeyEvent *event)
 {
     /* On définie le sens où le player doit aller.*/
@@ -192,7 +158,6 @@ void Player::keyPressEvent(QKeyEvent *event)
     if(event->key() == Qt::Key_Space){
         pSpriteMove->setIsRunning(true);
     }
-
 }
 
 
@@ -215,3 +180,9 @@ void Player::keyReleaseEvent(QKeyEvent *event)
     }
 }
 
+
+
+SpriteImgMove *Player::getPSpriteMove() const
+{
+    return pSpriteMove;
+}

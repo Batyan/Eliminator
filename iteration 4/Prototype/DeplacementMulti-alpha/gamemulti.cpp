@@ -102,6 +102,8 @@ void GameMulti::on_readyRead() {
         PlayerLight pl(id,150,150,true);
         sendMessage(pl.serial());
 
+        connect(levelscene, SIGNAL(sendPos(qreal,qreal)), this, SLOT(on_tick(qreal,qreal)));
+
         /*connect(&timer, SIGNAL(timeout()), this, SLOT(on_tick()));
         timer.start(30);*/
     }
@@ -113,6 +115,7 @@ void GameMulti::on_readyRead() {
         }
         else
         {
+            player.print();
             levelscene->movePlayer(player.id,player.x,player.y);
         }
     }
@@ -120,8 +123,13 @@ void GameMulti::on_readyRead() {
     messageSize = 0;
 }
 
-void GameMulti::on_tick()
+void GameMulti::on_tick(qreal x, qreal y)
 {
+    qDebug() << "signal" << x << y;
+
+    PlayerLight pl(id,x,y,false);
+
+    sendMessage(pl.serial());
 }
 
 /*void GameMulti::keyPressEvent(QKeyEvent *event)

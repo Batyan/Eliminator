@@ -48,7 +48,7 @@ class SpriteImgMove;
 class Player: public MovableEntity
 {
 private:
-    SpriteImgMove * pSpriteMove; /*!< @brief Pointeur sur SpriteImgMove
+    /*!< @brief Pointeur sur SpriteImgMove
                                     qui gère l'affichage d'une animation.*/
 public:
     /**
@@ -95,15 +95,12 @@ public:
      */
     QPainterPath shape() const;
 
+
+
     //! @brief Destructeur ~Player.
     ~Player();
 
-    /**
-     * @brief Gère le déplacement par rapport aux coordonnées x et y données.
-     * @param xa Coordonnée x de déplacement.
-     * @param ya Coordonnée y de déplacement.
-     */
-    void move(qreal xa, qreal ya);
+    SpriteImgMove *getPSpriteMove() const;
 
 protected:
     /**

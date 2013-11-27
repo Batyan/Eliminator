@@ -10,6 +10,7 @@
 #define MOVABLEENTITY_H
 
 #include "entity.h"
+#include "spriteimgmove.h"
 
 /**
  * @author Guillaume Rasolo
@@ -26,6 +27,7 @@ private:
     int animTime; /*!< @brief Vitesse que prendra une animation de déplacement dans le temps. */
     qreal speedWalking; /*!< @brief Vitesse de déplacement de l'object.*/
 public:
+    SpriteImgMove *pSpriteMove;
     /**
      * @brief Constructeur MovableEntity.
      * @param x Coordonnée x qui sera donner à l'entity.
@@ -108,6 +110,8 @@ public:
      * @param value
      */
     void setSpeedWalking(const qreal &value);
+
+    void move(qreal xa, qreal ya);
 
     int id = -1;
 };
