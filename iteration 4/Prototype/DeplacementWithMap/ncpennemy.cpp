@@ -114,7 +114,9 @@ void NcpEnnemy::move(qreal xa, qreal ya)
     }
 
     /*On change les coordonnées de l'objet player par rapport à la scène.*/
-    setPos(mapToScene(xa,ya));
+    if(!IsInCollision()){
+        setPos(mapToScene(xa,ya));
+    }
 
 
 }
@@ -125,39 +127,29 @@ void NcpEnnemy::findPathToTarget()
     if(target == NULL) return;
     qreal xa = 0, ya =0;
 
-    if(getX() <= target->getX()){
-        xa += getSpeedWalking();
-    }
-
-    if(getX() >= target->getX()){
-        xa -= getSpeedWalking();
-    }
 
     if(getY() <= target->getY()){
         ya += getSpeedWalking();
     }
+
     if(getY() >= target->getY()){
         ya -= getSpeedWalking();
     }
 
-    if(isInCollision()){
-        if(getDirMove() == DIR_DOWN_MOVING){
-            setY(getY() - getSpeedWalking());
-        }else if(getDirMove() == DIR_UP_MOVING){
-            setY(getY() + getSpeedWalking());
-        }else if(getDirMove() == DIR_RIGHT_MOVING){
-            setX(getX() - getSpeedWalking());
-        }else if(getDirMove() == DIR_LEFT_MOVING){
-            setX(getX() + getSpeedWalking());
-        }
-    }else{
-        if(xa != 0 || ya != 0){
-            eSpriteMove->setIsWalking(true);
-            move(xa,ya);
-        }else{
-            eSpriteMove->setIsWalking(false);
-        }
+    if(getX() <= target->getX()){
+        xa += getSpeedWalking();
     }
+    if(getX() >= target->getX()){
+        xa -= getSpeedWalking();
+    }
+
+    if(xa != 0 || ya != 0){
+        eSpriteMove->setIsWalking(true);
+        move(xa,ya);
+    }else{
+        eSpriteMove->setIsWalking(false);
+    }
+
 
 
 }

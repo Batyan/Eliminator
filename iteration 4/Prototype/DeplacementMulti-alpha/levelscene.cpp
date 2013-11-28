@@ -74,7 +74,7 @@ LevelScene::LevelScene(int id)
     ennemy->setTarget(player);
 
     /*On ajout l'ennemie dans la scène.*/
-    addItem(ennemy);
+    //addItem(ennemy);
     /*On ajout le player dans la scène.*/
     addItem(player);
 

@@ -100,24 +100,13 @@ void Player::advance(int phase)
 
     /* On effectue le déplacement du player*/
 
-    if(isInCollision()){
-        if(getDirMove() == DIR_DOWN_MOVING){
-            setY(getY() - 1.0);
-        }else if(getDirMove() == DIR_UP_MOVING){
-            setY(getY() + 1.0);
-        }else if(getDirMove() == DIR_RIGHT_MOVING){
-            setX(getX() - 1.0);
-        }else if(getDirMove() == DIR_LEFT_MOVING){
-            setX(getX() + 1.0);
-        }
+    if(xa != 0 || ya != 0){
+        pSpriteMove->setIsWalking(true);
+        move(xa,ya);
     }else{
-        if(xa != 0 || ya != 0){
-            pSpriteMove->setIsWalking(true);
-            move(xa,ya);
-        }else{
-            pSpriteMove->setIsWalking(false);
-        }
+        pSpriteMove->setIsWalking(false);
     }
+
 
     setAnimTime(DEFAULT_ANIME_TIME);
 }
@@ -130,7 +119,7 @@ QRectF Player::boundingRect() const
 QPainterPath Player::shape() const
 {
     QPainterPath path;
-    path.addRect(-5,0,getWidth(),getHeight());
+    path.addRect(0,0,getWidth(),getHeight());
     return path;
 }
 
@@ -155,9 +144,6 @@ void Player::keyPressEvent(QKeyEvent *event)
     if(event->key() == Qt::Key_Down){
         pSpriteMove->setIsLookingDown(true);
     }
-    if(event->key() == Qt::Key_Space){
-        pSpriteMove->setIsRunning(true);
-    }
 }
 
 
@@ -175,9 +161,7 @@ void Player::keyReleaseEvent(QKeyEvent *event)
     if(event->key() == Qt::Key_Down){
         pSpriteMove->setIsLookingDown(false);
     }
-    if(event->key() == Qt::Key_Space){
-        pSpriteMove->setIsRunning(false);
-    }
+
 }
 
 

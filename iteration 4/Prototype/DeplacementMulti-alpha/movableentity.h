@@ -114,6 +114,11 @@ public:
     void move(qreal xa, qreal ya);
 
     int id = -1;
+
+    bool IsInCollision();
+private:
+    bool ifIcantMove(const QGraphicsItem * item);
+    bool intersectItems(const QGraphicsItem * item, const QPointF& Point1, const QPointF & Point2);
 };
 
 #endif // MOVABLEENTITY_H
