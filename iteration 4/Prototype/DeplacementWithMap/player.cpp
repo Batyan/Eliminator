@@ -29,8 +29,8 @@ Player::Player()
     setFocus();
 }
 
-Player::Player(qreal x, qreal y, int width, int height, QString crustomPathSprite)
-    :MovableEntity(x,y,width,height)
+Player::Player(qreal x, qreal y, QString crustomPathSprite)
+    :MovableEntity(x,y,DEFAULT_P_WIDTH,DEFAULT_P_HEIGHT)
 {
 
     /*On Donne un sprite à notre player,
@@ -43,9 +43,6 @@ Player::Player(qreal x, qreal y, int width, int height, QString crustomPathSprit
 
     /*On définie que player est focusable et peut resevoir des signaux envoyer par la scène.*/
     setFlag(QGraphicsItem::ItemIsFocusable);
-
-    /*On définie que player est un objet qui change de position dans la scène.*/
-    setFlag(QGraphicsItem::ItemIsMovable);
 
     /*On définie que player est l'objet qui possède le focus des events envoyés par la scène.*/
     setFocus();

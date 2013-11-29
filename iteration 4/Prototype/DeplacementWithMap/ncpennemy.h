@@ -41,11 +41,12 @@ class SpriteImgMove;
 class NcpEnnemy : public MovableEntity
 {
 private:
+
     SpriteImgMove * eSpriteMove;/*!< @brief Pointeur sur SpriteImgMove
                                     qui gère l'affichage d'une animation.*/
 
     Entity * target;/*!< @brief Pointeur une entity qui sera la cible de l'ennemie.*/
-
+    int type;
 public:
     /**
      * @brief Constructeur NcpEnnemy par défaut.
@@ -56,11 +57,9 @@ public:
      * @brief Constructeur NcpEnnemy.
      * @param x Coordonnée x qui sera donner à l'ennemie.
      * @param y Coordonnée y qui sera donner à l'ennemie.
-     * @param width Largeur qui sera donner à l'ennemie.
-     * @param height Hauteur qui sera donner à l'ennemie.
      * @param crustomPathSprite Chemin du sprite qui correspond à l'ennemie. Initialiser à NULL.
      */
-    NcpEnnemy(qreal x, qreal y, int width, int height, QString crustomPathSprite = NULL);
+    NcpEnnemy(qreal x, qreal y, int type = 1);
 
     /**
      * @brief Permet l'affichage de l'ennemie avec ces animations correspondantes.

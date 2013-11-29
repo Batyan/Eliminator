@@ -19,10 +19,6 @@ GameView::GameView()
     /* On applique l'antialiasing pour la vue d'affichage*/
     setRenderHint(QPainter::Antialiasing);
 
-    /*On definie une image de fond d'écran pour la vue d'affichage*/
-    setBackgroundBrush(QPixmap(":/res/background.png"));
-    setCacheMode(QGraphicsView::CacheBackground);
-
     /*On applique le zoom à la vue d'affichage*/
     scale(zoomView,zoomView);
 
@@ -36,7 +32,6 @@ GameView::GameView()
     qreal sceneWidth = (viewWidth/(2*zoomView))-3;
     qreal sceneHeight = (viewHeight/(2*zoomView))-3;
 
-    // gameScene->setSceneRect(0,0,sceneWidth,sceneHeight);
     levelScene->setSceneRect(0,0,sceneWidth,sceneHeight);
 
     /*On connect notre scène avec la view.*/

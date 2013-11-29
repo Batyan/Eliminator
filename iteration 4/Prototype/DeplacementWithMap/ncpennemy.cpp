@@ -13,20 +13,20 @@
 #include "ncpennemy.h"
 
 NcpEnnemy::NcpEnnemy()
-    :MovableEntity(qrand()%250+50,qrand()%150+50,DEFAULT_E_WIDTH,DEFAULT_E_HEIGHT),target(NULL)
+    :MovableEntity(qrand()%250+50,qrand()%150+50,DEFAULT_E_WIDTH,DEFAULT_E_HEIGHT),
+      target(NULL),type(1)
 {
-    eSpriteMove = new SpriteImgMove(":res/Ennemy/default.png");
+    eSpriteMove = new SpriteImgMove(":res/Ennemy/1.png");
 
 }
 
-NcpEnnemy::NcpEnnemy(qreal x, qreal y, int width, int height, QString crustomPathSprite)
-    :MovableEntity(x,y,width,height),target(NULL)
+NcpEnnemy::NcpEnnemy(qreal x, qreal y, int type)
+    :MovableEntity(x,y,DEFAULT_E_WIDTH,DEFAULT_E_HEIGHT),
+      target(NULL),type(type)
 {
-    if(crustomPathSprite.isNull()){
-        eSpriteMove = new SpriteImgMove(":res/Ennemy/default.png");
-    }else{
-        eSpriteMove = new SpriteImgMove(crustomPathSprite);
-    }
+
+    eSpriteMove = new SpriteImgMove(":res/Ennemy/"+ QString::number(type)+".png");
+
 }
 
 void NcpEnnemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -34,14 +34,6 @@ void NcpEnnemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     Q_UNUSED(option); Q_UNUSED(widget);
 
     /*Gère l'affichage du player*/
-    QRectF rec = boundingRect();
-    QBrush brush (Qt::blue);
-    if(isInCollision()){
-        brush.setColor(Qt::red);
-    }
-
-    painter->fillRect(rec,brush);
-    painter->drawRect(rec);
     eSpriteMove->render(0,0,getWidth(),getHeight(),painter,getDirMove(),getAnimFrame());
 }
 
@@ -129,18 +121,18 @@ void NcpEnnemy::findPathToTarget()
 
 
     if(getY() <= target->getY()){
-        ya += getSpeedWalking();
+        ya += getSpeedWalking() * type;
     }
 
     if(getY() >= target->getY()){
-        ya -= getSpeedWalking();
+        ya -= getSpeedWalking() * type;
     }
 
     if(getX() <= target->getX()){
-        xa += getSpeedWalking();
+        xa += getSpeedWalking() * type;
     }
     if(getX() >= target->getX()){
-        xa -= getSpeedWalking();
+        xa -= getSpeedWalking() * type;
     }
 
     if(xa != 0 || ya != 0){

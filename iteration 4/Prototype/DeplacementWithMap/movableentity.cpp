@@ -5,6 +5,8 @@
   *@version 1.0
   */
 
+#include <QGraphicsScene>
+#include "directionmove.h"
 #include "movableentity.h"
 
 MovableEntity::MovableEntity(qreal x, qreal y, int width, int height)

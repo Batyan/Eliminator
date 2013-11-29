@@ -65,7 +65,7 @@ public:
      * @param height Hauteur qui sera donner au player.
      * @param crustomPathSprite Chemin du sprite qui correspond au player. Initialiser à NULL.
      */
-    Player(qreal x, qreal y, int width, int height, QString crustomPathSprite = NULL);
+    Player(qreal x, qreal y, QString crustomPathSprite = NULL);
 
     /**
      * @brief Permet l'affichage du player avec ces animations correspondantes.

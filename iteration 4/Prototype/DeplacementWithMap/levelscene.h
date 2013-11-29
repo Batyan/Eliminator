@@ -18,6 +18,7 @@
 #include "xmltiledmap.h"
 #include "tile.h"
 
+class NcpEnnemy;
 class MovableEntity;
 
 /**
@@ -31,9 +32,11 @@ class LevelScene : public QGraphicsScene
 {
     Q_OBJECT
 private:
+    int levelId;
     Tile tile; /*!< @brief Objet Tile.*/
     MovableEntity * player; /*!< @brief Pointeur d'un objet MovableEntity.*/
     XmlTiledMap *map; /*!< @brief Objet XmlTiledMap, gestion de la map.*/
+    QList<NcpEnnemy *> ennemies;
 
     int widthTile; /*!< @brief Nombre total de Tile en largeur.*/
     int heightTile;  /*!< @brief Nombre total de Tile en longeur.*/
@@ -70,6 +73,8 @@ protected:
      */
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
+    void keyPressEvent(QKeyEvent *event);
+
 public slots:
     /**
      * @brief fonction advance
@@ -84,6 +89,10 @@ private:
      * @details Permet de charger un niveau.
      */
     void loadWorld();
+
+    void setLevel(int id);
+
+    void clear();
 
 };
 
