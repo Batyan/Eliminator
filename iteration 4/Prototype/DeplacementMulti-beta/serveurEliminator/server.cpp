@@ -22,11 +22,9 @@ server::server(quint16 port)
 void server::on_connection()
 {
     QTcpSocket * socket = tcpserver->nextPendingConnection();
-    PlayerLight pl(idmax,50,50,true);
+    PlayerLight pl(idmax,150,150,true);
 
-    sockets << socket;
-
-    idmax ++;
+    sockets[idmax] = socket;
 
     connect(socket, SIGNAL(readyRead()),    this,   SLOT(on_readyRead()));
     connect(socket, SIGNAL(disconnected()), this,   SLOT(on_deconnexion()));
@@ -35,17 +33,24 @@ void server::on_connection()
 
     QVariant variant(idmax);
     sendMessage(variant,socket);
+
+    sendMessageOthers(pl.serial(),socket);
+    idmax ++;
 }
 
 void server::on_deconnexion()
 {
+    int id;
     QTcpSocket *socket = qobject_cast<QTcpSocket *>(sender());
 
     if (socket == 0)
         return;
 
-    sockets.removeAt(sockets.indexOf(socket));
-    qDebug() << "Deconnexion. (" << sockets.size() << ")";
+    id = sockets.key(socket);
+    PlayerLight pl(id,0,0,false);
+    sendMessageOthers(pl.serial(),socket);
+    sockets.remove(id);
+    qDebug() << "Deconnexion. (" << id << ")";
 }
 
 void server::on_readyRead()
@@ -91,13 +96,14 @@ void server::sendMessageOthers(QVariant variant,QTcpSocket * socket){
     out.device()->seek(0);
     out << (quint16)(block.size() - sizeof(quint16));
 
-    int i;
-    for(i=0;i<sockets.size();i++)
-        if(socket!=sockets[i])
-            if(sockets[i]->write(block)==-1){
+    foreach(int e, sockets.keys())
+    {
+        if(sockets[e] != socket)
+            if(sockets[e]->write(block)==-1){
                 qDebug() << "error write";
                 return;
             }
+    }
 }
 
 void server::sendMessage(QVariant variant, QTcpSocket * socket) {

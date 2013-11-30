@@ -96,12 +96,13 @@ void GameMulti::on_readyRead() {
     if(variant.canConvert<int>()){
         id = variant.value<int>();
 
-        levelscene->addPlayer(id,true);
-
-        qDebug() << id;
+        qDebug() << "id recu : " << id;
 
         GameMulti::localPlayer = levelscene->getLocalPlayer();
         PlayerLight pl(id,150,150,true);
+
+        levelscene->addPlayer(pl,true);
+
         sendMessage(pl.serial());
 
         connect(levelscene, SIGNAL(sendPos(qreal, qreal, bool,bool,bool,bool,bool)), this, SLOT(on_tick(qreal,qreal,bool,bool,bool,bool,bool)));
@@ -111,10 +112,23 @@ void GameMulti::on_readyRead() {
         PlayerLight coopPlayer = variant.value<PlayerLight>();
 
         if(coopPlayer.isNew){
-            levelscene->addPlayer(coopPlayer.id,false);
+
+            PlayerLight pl(id,localPlayer->getX(),localPlayer->getY(),true);
+
+            qDebug() << "cooplayer recu ";
+            coopPlayer.print();
+
+            qDebug() << "envoie new pl";
+            pl.print();
+
+            if(levelscene->addPlayer(coopPlayer,false))
+                sendMessage(pl.serial());
         }
         else
         {
+            if(coopPlayer.x == 0 && coopPlayer.y == 0)
+                levelscene->removePlayer(coopPlayer.id);
+            else
             levelscene->movePlayer(coopPlayer.id,coopPlayer.x,coopPlayer.y,coopPlayer.isWalking,coopPlayer.isLookingRight,coopPlayer.isLookingLeft,coopPlayer.isLookingDown,coopPlayer.isLookingUp);
         }
     }

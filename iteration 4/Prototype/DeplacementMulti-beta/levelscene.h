@@ -19,7 +19,7 @@
 #include "xmltiledmap.h"
 #include "tile.h"
 #include "player.h"
-
+#include "playerlight.h"
 class MovableEntity;
 
 
@@ -64,7 +64,7 @@ public:
     LevelScene(int id);
 
     MovableEntity * getLocalPlayer();
-    void addPlayer(int id, bool isLocal);
+    bool addPlayer(PlayerLight pl, bool isLocal);
     void removePlayer(int id);
     void movePlayer(int id,qreal x, qreal y, bool Walking, bool Right, bool Left, bool Down, bool Up);
 protected:

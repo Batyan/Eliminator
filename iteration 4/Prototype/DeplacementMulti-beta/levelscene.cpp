@@ -6,6 +6,7 @@
 #include "levelscene.h"
 #include "spriteimgmove.h"
 
+
 LevelScene::LevelScene()
     :QGraphicsScene()
 {
@@ -108,12 +109,18 @@ MovableEntity * LevelScene::getLocalPlayer()
     return LevelScene::player;
 }
 
-void LevelScene::addPlayer(int id,bool isLocal)
+bool LevelScene::addPlayer(PlayerLight pl,bool isLocal)
 {
+    int i;
     Player * newplayer = new Player();
-    newplayer->id = id;
+    newplayer->id = pl.id;
+
+    for(i=0;i<otherPlayers.size();i++)
+        if(otherPlayers[i]->id == pl.id)
+            return false;
 
     addItem(newplayer);
+    newplayer->setPos(pl.x,pl.y);
 
     if(isLocal)
         player = newplayer;
@@ -122,18 +129,22 @@ void LevelScene::addPlayer(int id,bool isLocal)
 
     setFocusItem(player);
 
+    return true;
 }
 
 void LevelScene::removePlayer(int id)
 {
     int i;
 
-    for(i=0;i<otherPlayers.size();i++)
+    for(i=0;i<otherPlayers.size();i++){
+        qDebug() << "id contenu" << otherPlayers[i]->id;
         if(otherPlayers[i]->id == id){
+            qDebug() << "playerFound" << id;
             removeItem(otherPlayers[i]);
             otherPlayers.removeAt(i);
             break;
         }
+   }
 }
 
 
@@ -149,7 +160,6 @@ void LevelScene::movePlayer(int id,qreal x, qreal y, bool Walking, bool Right, b
             otherPlayers[i]->pSpriteMove->setIsLookingLeft(Left);
             otherPlayers[i]->pSpriteMove->setIsLookingDown(Down);
             otherPlayers[i]->pSpriteMove->setIsLookingUp(Up);
-
             break;
         }
 

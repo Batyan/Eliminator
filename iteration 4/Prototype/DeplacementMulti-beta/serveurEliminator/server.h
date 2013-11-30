@@ -7,7 +7,7 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QTimer>
-#include <QList>
+#include <QMap>
 
 #include "playerlight.h"
 
@@ -22,7 +22,7 @@ private slots:
     void on_readyRead();
 private:
     QTcpServer * tcpserver;
-    QList<QTcpSocket *> sockets;
+    QMap<int, QTcpSocket *> sockets;
     quint16 messageSize;
     int idmax;
 
