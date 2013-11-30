@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/characters.png</file>
+        <file>res/background.png</file>
+        <file>res/TileMap/terrain.png</file>
+        <file>res/TileMap/background.png</file>
+        <file>res/level/Level_1.xml</file>
+        <file>res/level/Level_2.xml</file>
+        <file>res/Ennemy/default.png</file>
+        <file>res/Ennemy/01.png</file>
+    </qresource>
+</RCC>
