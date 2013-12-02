@@ -21,30 +21,14 @@ class SolidEntity: public Entity
 private:
     int *id; /*!< @brief Pointeur de l'idenfiant de l'entity. */
 public:
-    /**
-     * @brief Constructeur par defaut de SolidEntity
-     */
+
+    //! @brief Constructeur par defaut de SolidEntity.
     SolidEntity();
 
-    /**
-     * @brief Constructeur SolidEntity
-     * @param x Coordonnée x qui sera donner à l'entity.
-     * @param y Coordonnée y qui sera donner à l'entity.
-     * @param width Largeur qui sera donner à l'entity.
-     * @param height Hauteur qui sera donner à l'entity.
-     * @param id Identifiant de l'entity.
-     */
+    //! @brief Constructeur SolidEntity.
     SolidEntity(qreal x, qreal y, int width, int height, int *id);
 
-    /**
-     * @brief Desctucteur ~SolidEntity
-     */
-    virtual ~SolidEntity();
-
-    /**
-     * @brief getId
-     * @return l'identifiant de l'entity
-     */
+    //! @brief l'identifiant de l'entity.
     int *getId() const;
 
 };

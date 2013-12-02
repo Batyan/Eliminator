@@ -8,9 +8,9 @@
   * afficher les éléments dans la fenêtre.
   *
   */
+
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
-
 
 #include <QMainWindow>
 

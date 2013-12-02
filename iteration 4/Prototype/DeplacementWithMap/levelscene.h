@@ -12,7 +12,6 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-#include <QString>
 #include <QGraphicsScene>
 
 #include "xmltiledmap.h"
@@ -23,7 +22,7 @@ class MovableEntity;
 
 /**
  * @author Guillaume Rasolo
- * @version 1.0
+ * @version 2.0
  * @brief La classe LevelScene hérite de QGraphicsScene.\n
  * LevelScene s'occupe des objets et du chargement du niveau.
  * @details QGraphicsScene est une classe interne de Qt.
@@ -32,19 +31,19 @@ class LevelScene : public QGraphicsScene
 {
     Q_OBJECT
 private:
-    int levelId;
+    int levelId; /*!< @brief identifiant du level de la scene.*/
     Tile tile; /*!< @brief Objet Tile.*/
     MovableEntity * player; /*!< @brief Pointeur d'un objet MovableEntity.*/
     XmlTiledMap *map; /*!< @brief Objet XmlTiledMap, gestion de la map.*/
-    QList<NcpEnnemy *> ennemies;
+    QList<NcpEnnemy *> ennemies;  /*!< @brief Liste des ennemis.*/
 
     int widthTile; /*!< @brief Nombre total de Tile en largeur.*/
     int heightTile;  /*!< @brief Nombre total de Tile en longeur.*/
     int width; /*!< @brief Largeur de la map.*/
     int height;/*!< @brief Longeur de la map.*/
 
-    const QString Dpath =":res/level/Level_"; /*!< @brief Chemin relatif de la map.*/
-    QString path ; /*!< @brief Chemin absolu de la map.*/
+    const QString Dpath =":res/level/Level_"; /*!< @brief Chemin relatif des niveaux.*/
+    QString path ; /*!< @brief Chemin absolu du niveau.*/
 
 public:
     /**
@@ -61,18 +60,14 @@ public:
     LevelScene(int id);
 
 protected:
-    /**
-     * @brief mousePressEvent
-     * @param event Événement souris.
-     */
+
+    //! @brief mousePressEvent
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
-    /**
-     * @brief mouseReleaseEvent
-     * @param event Événement souris.
-     */
+    //! @brief mouseReleaseEvent
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 
+    //! @brief keyPressEvent
     void keyPressEvent(QKeyEvent *event);
 
 public slots:
@@ -84,15 +79,12 @@ public slots:
     void advance();
 
 private:
-    /**
-     * @brief loadWorld
-     * @details Permet de charger un niveau.
-     */
-    void loadWorld();
 
-    void setLevel(int id);
+    void loadWorld();/*!< @brief Permet de charger le niveau.*/
 
-    void clear();
+    void setLevel(int id);/*!< @brief Permet de changer de niveau.*/
+
+    void clear();/*!< @brief Permet d'effacer  les objets contenus dans la scène.*/
 
 };
 

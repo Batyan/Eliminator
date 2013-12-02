@@ -31,7 +31,6 @@ HEADERS  += \
     player.h \
     gamewindow.h \
     entity.h \
-    directionmove.h \
     spriteimgmove.h \
     tile.h \
     xmltiledmap.h \
@@ -39,7 +38,8 @@ HEADERS  += \
     movableentity.h \
     solidentity.h \
     mur.h \
-    levelscene.h
+    levelscene.h \
+    directionmove.h
 
 FORMS    +=
 

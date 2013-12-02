@@ -13,7 +13,6 @@
  * @brief The DirectionMove enum
  * @details DirectionMove est une série de constantes prédéfinie pour définir la
  * la direction de déplacement.
- *
  */
 enum DirectionMove{
     DIR_DOWN_MOVING, /*!< @brief Déplacement vers le bas.*/

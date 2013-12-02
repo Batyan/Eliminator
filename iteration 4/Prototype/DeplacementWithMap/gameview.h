@@ -14,17 +14,14 @@
 
 //! @def DEFAULT_WIDTH
 //! @brief Correspond à la largeur par défaut que prendra la fenêtre.
-//! @details Initialiser a 1280
 #define DEFAULT_WIDTH 1280
 
 //! @def DEFAULT_HEIGHT
 //! @brief Correspond à la hauteur par défaut que prendra la fenêtre.
-//! @details Initialiser a 736
 #define DEFAULT_HEIGHT 736
 
 //! @def DEFAULT_ZOOM
 //! @brief Correspond au zoom par défaut qui sera appliquer à la vue d'affichage.
-//! @details Initialiser a 2
 #define DEFAULT_ZOOM 1
 
 class LevelScene;
@@ -55,29 +52,19 @@ public:
      */
     GameView();
 
-    /**
-     * @brief Getter de GameView.
-     * @return La dimension de la view.
-     */
+    //! @brief getSize
     QSize getSize() const;
 
-    /**
-     * @brief  Getter de GameView.
-     * @return La largeur de la view.
-     */
+    //! @brief getZoomView
+    qreal getZoomView() const;
+
+    //! @brief getWidth
     int getWidth() const;
 
-    /**
-     * @brief  Getter de GameView.
-     * @return la Hauteur de la view.
-     */
+    //! @brief getWidth
     int getHeight() const;
 
-    /**
-     * @brief Getter de GameView.
-     * @return La valeur du Zoom appliquer à la view.
-     */
-    qreal getZoomView() const;
+
 };
 
 #endif // GAMEVIEW_H

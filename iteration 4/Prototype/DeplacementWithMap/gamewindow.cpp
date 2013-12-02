@@ -1,10 +1,3 @@
-/**
-  * @file gamewindow.cpp
-  * @author Guillaume Rasolo
-  * @date 08/11/2013
-  * @version 2.0
-  */
-
 #include "gameview.h"
 #include "gamewindow.h"
 

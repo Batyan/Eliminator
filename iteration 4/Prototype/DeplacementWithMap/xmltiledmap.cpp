@@ -1,10 +1,3 @@
-/**
-  *@file xmltilemap.cpp
-  *@author Michael Plong
-  *@date 22/11/2013
-  *@version 1.0
-  */
-
 #include <QFile>
 #include <QDebug>
 

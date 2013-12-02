@@ -1,12 +1,7 @@
 /**
   * @mainpage Documentation Eliminator++
-  * @section intro_sec Introduction
-  *
-  * Le cas d'utilisation étudié est le déplacement d'un personnage.
-  *
-  * @subsection tools_subsec Outils de développement:
-  * - C++/Qt5.1
-  *
+  * @section intro_sec Outils de développement:
+  *     - C++/Qt5.1
   */
 
 /**
@@ -16,7 +11,6 @@
   * @version 1.0
   * @brief Le main gére le lancement du programme.
   * C'est ici que l'application lancera l'interface graphique.
-  *
   */
 
 #include <QApplication>

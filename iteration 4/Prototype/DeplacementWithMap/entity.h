@@ -41,34 +41,17 @@ public:
      */
     bool isCollision();
 
-    /**
-     * @brief Getter de Entity.
-     * @return La largeur de l'entity.
-     */
+    //! @brief getWidth
     int getWidth() const;
 
-    /**
-     * @brief Getter de Entity.
-     * @return La hauteur de l'entity.
-     */
+    //! @brief getHeight
     int getHeight() const;
 
-    /**
-     * @brief Getter de Entity.
-     * @return La coordonnée x de l'entity.
-     */
+    //! @brief getX
     qreal getX() const;
 
-    /**
-     * @brief Getter de Entity.
-     * @return La coordonnée y de l'entity.
-     */
+    //! @brief getY
     qreal getY() const;
-
-    /**
-     * @brief Desctucteur ~Entity.
-     */
-    virtual ~Entity();
 
 };
 

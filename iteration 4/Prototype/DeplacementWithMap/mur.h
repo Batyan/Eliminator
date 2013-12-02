@@ -25,13 +25,23 @@ class Mur : public SolidEntity
 private:
     QPixmap ImgTilesetTerrain;/*!< TileSet des mur.*/
 public:
+
+    //! @brief Constructeur par defaut de Mur.
     Mur();
+
+    //! @brief Constructeur  de Mur.
     Mur(qreal x, qreal y, int width, int height, int *id = 0);
 
+    //! @brief Permet l'affichage d'un mur.
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+
+    //! @brief Permet le rafraîchissement de l'objet.
     void advance(int phase);
 
+    //! @brief boundingRect
     QRectF boundingRect()const;
+
+    //! @brief shape
     QPainterPath shape() const;
 };
 

@@ -1,12 +1,9 @@
-#include <QtAlgorithms>
 #include <QKeyEvent>
-#include <QGraphicsItem>
 
 #include "mur.h"
 #include "ncpennemy.h"
 #include "player.h"
 #include "levelscene.h"
-
 
 LevelScene::LevelScene()
     :QGraphicsScene(),levelId(1)
@@ -20,10 +17,8 @@ LevelScene::LevelScene()
     /*On charge la map*/
     map = new XmlTiledMap(path);
 
-
     /*On definie une image de fond d'écran pour la vue d'affichage*/
     setBackgroundBrush(QPixmap(":/res/background/bg_"+ QString::number(1)+".png"));
-
 
     /*On recupère les dimensions de la map->*/
     widthTile = map->getNbTileWidthInMap();
@@ -112,12 +107,13 @@ void LevelScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 void LevelScene::keyPressEvent(QKeyEvent *event)
 {
     QGraphicsScene::keyPressEvent(event);
-    if(event->key() == Qt::Key_F1){
+    /* Permet de changer de niveau avec les touches F1 et F2*/
+    if(event->key() == Qt::Key_F2){
         if(levelId <8){
             levelId++;
             setLevel(levelId);
         }
-    }else if(event->key() == Qt::Key_F2){
+    }else if(event->key() == Qt::Key_F1){
         if(levelId >1){
             levelId--;
             setLevel(levelId);
@@ -162,11 +158,14 @@ void LevelScene::loadWorld()
                 player = new Player(x*width,y*height);
             }
             else{
-                addItem(new Mur(x*width,y*height,width,height,tile.getCollision().at(map->getTileId(x,y,"Collision") - map->getLayerIndexTileMap("terrain"))));
+                addItem(new Mur(x*width,y*height,width,height,
+                                tile.getCollision().at(
+                                    map->getTileId(x,y,"Collision") - map->getLayerIndexTileMap("terrain"))));
             }
         }
     }
 
+    //On donne le player comme cible à tous les ennemis du niveau.
     foreach(NcpEnnemy *e , ennemies){
         e->setTarget(player);
     }

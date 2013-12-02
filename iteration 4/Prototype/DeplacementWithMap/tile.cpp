@@ -1,12 +1,3 @@
-/**
-  *@file tile.cpp
-  *@author Guillaume Rasolo
-  *@date 25/11/2013
-  *@version 1.0
-  */
-
-
-#include <QtCore/qmath.h>
 #include <QPixmap>
 #include "tile.h"
 

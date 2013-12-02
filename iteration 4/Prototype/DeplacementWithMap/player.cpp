@@ -1,26 +1,17 @@
-/**
-  *@file player.cpp
-  *@author Guillaume Rasolo
-  *@date 08/11/2013
-  *@version 1.0
-  */
-
 
 #include <QPainter>
 #include <QKeyEvent>
 
 #include "player.h"
-
 #include "directionmove.h"
-#include "spriteimgmove.h"
 
 
 Player::Player()
     :MovableEntity(150,150,DEFAULT_P_WIDTH,DEFAULT_P_HEIGHT)
 
 {
-    /*On Donne un sprite par defaut à notre player*/
-    pSpriteMove = new SpriteImgMove(":res/characters.png");
+    /*On donne un sprite par defaut à notre player*/
+    setPSpriteMove(new SpriteImgMove(":res/characters.png"));
 
     /*On définie que player est focusable et peut resevoir des signaux envoyer par la scène.*/
     setFlag(QGraphicsItem::ItemIsFocusable);
@@ -36,9 +27,9 @@ Player::Player(qreal x, qreal y, QString crustomPathSprite)
     /*On Donne un sprite à notre player,
        *si aucun chemin est définie c'est le sprite par défaut qui sera pris.*/
     if(crustomPathSprite.isNull()){
-        pSpriteMove = new SpriteImgMove(":res/characters.png");
+        setPSpriteMove(new SpriteImgMove(":res/characters.png"));
     }else{
-        pSpriteMove = new SpriteImgMove(crustomPathSprite);
+        setPSpriteMove(new SpriteImgMove(crustomPathSprite));
     }
 
     /*On définie que player est focusable et peut resevoir des signaux envoyer par la scène.*/
@@ -53,9 +44,7 @@ Player::Player(qreal x, qreal y, QString crustomPathSprite)
 void Player::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(option); Q_UNUSED(widget);
-
-    /*Gère l'affichage du player*/
-    pSpriteMove->render(0,0,getWidth(),getHeight(),painter,getDirMove(),getAnimFrame());
+    getPSpriteMove()->render(0,0,getWidth(),getHeight(),painter,getDirMove(),getAnimFrame());
 
 }
 
@@ -65,14 +54,9 @@ void Player::advance(int phase)
 
     qreal xa = 0, ya =0;
 
-    if(pSpriteMove->getIsRunning()){
-        setSpeedWalking(DEFAULT_SPEED_WALKING *3);
-    }else{
-        setSpeedWalking(DEFAULT_SPEED_WALKING);
-    }
-
     setAnimDelta(getAnimDelta()+1);
     setAnimTime(getAnimTime()+ getSpeedWalking());
+
     /* On gère l'animation de déplacement */
     if(getAnimDelta() >= getAnimTime()){
         setAnimFrame(getAnimFrame()+1);
@@ -85,24 +69,28 @@ void Player::advance(int phase)
 
     /*On définie les coordonnées de déplacement
      *par rapport au sens où le player doit aller.*/
-    if(pSpriteMove->getIsLookingUp()){
+    if(getPSpriteMove()->getIsLookingUp()){
         ya -= getSpeedWalking();
-    }else if(pSpriteMove->getIsLookingDown()){
+    }
+
+    if(getPSpriteMove()->getIsLookingDown()){
         ya += getSpeedWalking();
-    }else if(pSpriteMove->getIsLookingLeft()){
+    }
+
+    if(getPSpriteMove()->getIsLookingLeft()){
         xa -= getSpeedWalking();
-    }else if(pSpriteMove->getIsLookingRight()){
+    }
+
+    if(getPSpriteMove()->getIsLookingRight()){
         xa += getSpeedWalking();
     }
 
     /* On effectue le déplacement du player*/
-
-
     if(xa != 0 || ya != 0){
-        pSpriteMove->setIsWalking(true);
+        getPSpriteMove()->setIsWalking(true);
         move(xa,ya);
     }else{
-        pSpriteMove->setIsWalking(false);
+        getPSpriteMove()->setIsWalking(false);
     }
 
 
@@ -121,15 +109,10 @@ QPainterPath Player::shape() const
     return path;
 }
 
-Player::~Player()
-{
-    delete this;
-}
-
-
 void Player::move(qreal xa, qreal ya)
 {
-    /* On déplace le player de manière récursive tant que celui-ci veut bouger.*/
+    /*Permet de prendre en charge la diagonale et
+     *la detection de la collision qui en découle*/
     if(xa != 0 && ya != 0){
         move(xa,0);
         move(0,ya);
@@ -153,7 +136,6 @@ void Player::move(qreal xa, qreal ya)
         setDirMove(DIR_LEFT_MOVING);
     }
 
-    /*On change les coordonnées de l'objet player par rapport à la scène.*/
     if(!IsInCollision())
         setPos(mapToScene(xa,ya));
 
@@ -163,18 +145,17 @@ void Player::move(qreal xa, qreal ya)
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
-    /* On définie le sens où le player doit aller.*/
     if(event->key() == Qt::Key_Up){
-        pSpriteMove->setIsLookingUp(true);
+        getPSpriteMove()->setIsLookingUp(true);
     }
     if(event->key() == Qt::Key_Right){
-        pSpriteMove->setIsLookingRight(true);
+        getPSpriteMove()->setIsLookingRight(true);
     }
     if(event->key() == Qt::Key_Left){
-        pSpriteMove->setIsLookingLeft(true);
+        getPSpriteMove()->setIsLookingLeft(true);
     }
     if(event->key() == Qt::Key_Down){
-        pSpriteMove->setIsLookingDown(true);
+        getPSpriteMove()->setIsLookingDown(true);
     }
 
 }
@@ -183,16 +164,16 @@ void Player::keyPressEvent(QKeyEvent *event)
 void Player::keyReleaseEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_Up){
-        pSpriteMove->setIsLookingUp(false);
+        getPSpriteMove()->setIsLookingUp(false);
     }
     if(event->key() == Qt::Key_Right){
-        pSpriteMove->setIsLookingRight(false);
+        getPSpriteMove()->setIsLookingRight(false);
     }
     if(event->key() == Qt::Key_Left){
-        pSpriteMove->setIsLookingLeft(false);
+        getPSpriteMove()->setIsLookingLeft(false);
     }
     if(event->key() == Qt::Key_Down){
-        pSpriteMove->setIsLookingDown(false);
+        getPSpriteMove()->setIsLookingDown(false);
     }
 }
 

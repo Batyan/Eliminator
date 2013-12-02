@@ -1,26 +1,13 @@
-/**
-  *@file spriteimgmove.cpp
-  *@author Guillaume Rasolo
-  *@date 08/11/2013
-  *@version 1.0
-  */
-
 #include "spriteimgmove.h"
 #include "directionmove.h"
 
 
 SpriteImgMove::SpriteImgMove(QString pathSprite)
     :isWalking(false),isLookingUp (false),
-      isLookingLeft(false),isLookingRight(false),isLookingDown(false),isRunning(false)
+      isLookingLeft(false),isLookingRight(false),isLookingDown(false)
 {
     sprite = QPixmap(pathSprite);
 }
-
-SpriteImgMove::~SpriteImgMove()
-{
-    delete this;
-}
-
 
 void SpriteImgMove::render(qreal x, qreal y, int width, int height, QPainter *painter, int dirMove,int animFrame)
 {
@@ -118,14 +105,4 @@ bool SpriteImgMove::getIsLookingDown() const
 void SpriteImgMove::setIsLookingDown(bool value)
 {
     isLookingDown = value;
-}
-
-bool SpriteImgMove::getIsRunning() const
-{
-    return isRunning;
-}
-
-void SpriteImgMove::setIsRunning(bool value)
-{
-    isRunning = value;
 }

@@ -1,8 +1,9 @@
 /**
-  *@file xmltilemap.h
+  *@file xmltiledmap.h
   *@author Michael Plong
   *@date 22/11/2013
   *@version 1.0
+  *@brief Contient les fonctions de gestion d'une map.
   */
 
 #ifndef TILEDMAP_H
@@ -14,7 +15,7 @@
 
 /**
  * @author Michael Plong
- * @brief Permet de gerer une map en xml.\n
+ * @brief Permet de gérer une map en xml.\n
  */
 class XmlTiledMap
 {
@@ -23,7 +24,7 @@ private:
 public:
     /**
      * @brief Constructeur XmlTiledMap
-     * @detail permet de charger le fichier xml.
+     * @details permet de charger le fichier xml.
      */
     XmlTiledMap(const QString &path);
 
@@ -77,9 +78,6 @@ public:
 private:
     /**
      * @brief getId
-     * @param x
-     * @param y
-     * @param itemele
      * @return l'identifiant d'un element.
      */
     int getId(int x, int y, QDomElement itemele);

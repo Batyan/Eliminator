@@ -1,12 +1,5 @@
-/**
-  *@file mur.cpp
-  *@author Guillaume Rasolo
-  *@date 22/11/2013
-  *@version 1.0
-  */
 
 #include "mur.h"
-
 
 Mur::Mur()
     :SolidEntity()
