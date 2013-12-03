@@ -17,8 +17,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     server.cpp \
-    playerlight.cpp
+    playerlight.cpp \
+    changemap.cpp
 
 HEADERS += \
     server.h \
-    playerlight.h
+    playerlight.h \
+    changemap.h
