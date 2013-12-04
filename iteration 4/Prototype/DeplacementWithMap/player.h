@@ -1,6 +1,6 @@
 /**
  * @file player.h
- * @author Guillaume Rasolo
+ * @author Guillaume Rasolo, Yann Battista
  * @date 08/11/2013
  * @version 2.0
  * @brief Contient la définition d'un Player.
@@ -12,6 +12,7 @@
 #define PLAYER_H
 
 #include "movableentity.h"
+#include <QMouseEvent>
 
 //! @def DEFAULT_P_WIDTH
 //! @brief Correspond à la largeur par défaut que prendra le player.
@@ -29,6 +30,8 @@
 //! @brief Correspond au frame d'animation du player.
 #define DEFAULT_ANIME_FRAME 2
 
+#define TIMETOSHOT 15
+
 class SpriteImgMove;
 /**
  * @author Guillaume Rasolo
@@ -38,6 +41,8 @@ class SpriteImgMove;
  */
 class Player: public MovableEntity
 {
+private:
+    int timeShot=0;
 public:
 
     //! @brief Constructeur Player par défaut.

@@ -24,7 +24,8 @@ SOURCES += main.cpp\
     movableentity.cpp \
     solidentity.cpp \
     mur.cpp \
-    levelscene.cpp
+    levelscene.cpp \
+    projectile.cpp
 
 HEADERS  += \
     gameview.h \
@@ -39,7 +40,8 @@ HEADERS  += \
     solidentity.h \
     mur.h \
     levelscene.h \
-    directionmove.h
+    directionmove.h \
+    projectile.h
 
 FORMS    +=
 

@@ -4,6 +4,9 @@
 
 #include "player.h"
 #include "directionmove.h"
+#include "levelscene.h"
+#include "projectile.h"
+
 
 
 Player::Player()
@@ -95,6 +98,8 @@ void Player::advance(int phase)
 
 
     setAnimTime(DEFAULT_ANIME_TIME);
+
+    timeShot = qMax(0, timeShot-phase);
 }
 
 QRectF Player::boundingRect() const
@@ -174,6 +179,29 @@ void Player::keyReleaseEvent(QKeyEvent *event)
     }
     if(event->key() == Qt::Key_Down){
         getPSpriteMove()->setIsLookingDown(false);
+    }
+    if(event->key() == Qt::Key_Space && timeShot == 0)
+    {
+        int v = 0, h = 0;
+        int dir = getDirMove();
+        switch (dir) {
+        case DIR_DOWN_MOVING:
+            v = 1;
+            break;
+        case DIR_LEFT_MOVING:
+            h = -1;
+            break;
+        case DIR_RIGHT_MOVING:
+            h = 1;
+            break;
+        case DIR_UP_MOVING:
+            v = -1;
+            break;
+        default:
+            break;
+        }
+        scene()->addItem(new Projectile(getX()/2+getWidth()/4, getY()/2+getHeight()/4, v, h));
+        timeShot+=TIMETOSHOT;
     }
 }
 
