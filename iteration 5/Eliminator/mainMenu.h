@@ -68,6 +68,8 @@ public slots:
     //mode plein ecran
     void fullscreen();
 
+    void miniscreen();/*!< @brief mode plein ecran. */
+
     //retour vers menu principale
     void backMainMenu();
 

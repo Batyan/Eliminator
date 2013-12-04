@@ -15,7 +15,7 @@
 
 /**
  * @author Guillaume Rasolo
- * @version 1.0
+ * @version 2.0
  * @brief La classe SpriteImgMove
  * @details La classe s'occupe que de gérer les animations de
  * déplacement, garce aux informations qu'il reçoit de la classe qui l'appelle.
@@ -30,7 +30,6 @@ private:
     bool isLookingLeft; /*!< @brief Définie si le personnage regard à gauche.*/
     bool isLookingRight; /*!< @brief Définie si le personnage regard à droite.*/
     bool isLookingDown; /*!< @brief Définie si le personnage regard en bas. */
-    bool isRunning;
 
     //! @brief On définie une matrice d'animation du déplacement en bas.
     const int pImgDown[3][2] = {{ 0, 0 }, { 1, 0 }, { 2, 0 }};
@@ -44,91 +43,38 @@ private:
     //! @brief On définie une matrice d'animation du déplacement en haut.
     const int pImgUp[3][2] = {{ 0, 3 }, { 1, 3 }, { 2, 3 }};
 public:
-    /**
-     * @brief Constructeur SpriteImgMove.
-     * @param pathSprite Chemin du sprite qui correspond au personnage.
-     */
+
+    //! @brief Constructeur SpriteImgMove.
     SpriteImgMove(QString pathSprite);
 
-    /**
-     * @brief Destructeur ~SpriteImgMove
-     */
-    ~SpriteImgMove();
-
-    /**
-     * @brief Permet de dessiner l'animation du sprite du personnage.
-     * @param x Coordonnée x de la position.
-     * @param y Coordonnée y de la position.
-     * @param width Largeur du rectangle du sprite qui doit être dessiné.
-     * @param height Hauteur du rectangle du sprite qui doit être dessiné.
-     * @param painter Pointeur du painter de la fenêtre qui servira à dessiner.
-     * @param dirMove Valeur de la direction du mouvement qui sera donnée.
-     * @param animFrame Valeur de la frame d'animation qui sera donnée.
-     */
+    //! @brief Permet de dessiner l'animation du sprite du personnage.
     void render(qreal x, qreal y, int width, int height, QPainter *painter,int dirMove, int animFrame);
 
-    /**
-     * @brief SpriteImgMove
-     * @return
-     */
+    //! @brief getIsWalking
     bool getIsWalking() const;
-
-    /**
-     * @brief setIsWalking
-     * @param value
-     */
+    //! @brief setIsWalking
     void setIsWalking(bool value);
 
-    /**
-     * @brief getIsLookingUp
-     * @return
-     */
+    //! @brief getIsLookingUp
     bool getIsLookingUp() const;
-
-    /**
-     * @brief setIsLookingUp
-     * @param value
-     */
+    //! @brief setIsLookingU
     void setIsLookingUp(bool value);
 
-    /**
-     * @brief getIsLookingLeft
-     * @return
-     */
+    //! @brief getIsLookingLeft
     bool getIsLookingLeft() const;
-
-    /**
-     * @brief setIsLookingLeft
-     * @param value
-     */
+    //! @brief setIsLookingLeft
     void setIsLookingLeft(bool value);
 
-    /**
-     * @brief getIsLookingRight
-     * @return
-     */
+    //! @brief getIsLookingRight
     bool getIsLookingRight() const;
-
-    /**
-     * @brief setIsLookingRight
-     * @param value
-     */
+    //! @brief setIsLookingRight
     void setIsLookingRight(bool value);
 
-    /**
-     * @brief getIsLookingDown
-     * @return
-     */
+    //! @brief getIsLookingDown
     bool getIsLookingDown() const;
-
-    /**
-     * @brief setIsLookingDown
-     * @param value
-     */
+    //! @brief setIsLookingDown
     void setIsLookingDown(bool value);
 
-    bool getIsRunning() const;
-    void setIsRunning(bool value);
 };
 
 #endif // SPRITEIMGMOVE_H

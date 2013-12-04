@@ -1,16 +1,9 @@
-/**
-  *@file movableentity.cpp
-  *@author Guillaume Rasolo
-  *@date 25/11/2013
-  *@version 1.0
-  */
-
 #include <QGraphicsScene>
 #include "directionmove.h"
 #include "movableentity.h"
 
 MovableEntity::MovableEntity(qreal x, qreal y, int width, int height)
-    :Entity(x,y,width,height),dirMove(0),animFrame(15),speedWalking(2)
+    :Entity(x,y,width,height),id(-1),dirMove(0),animFrame(15),speedWalking(2), pSpriteMove(NULL)
 {
     /*On définie que player est un objet active*/
     setActive(true);
@@ -186,4 +179,23 @@ bool MovableEntity::intersectItems(const QGraphicsItem *item, const QPointF &Poi
 
 }
 
-MovableEntity::~MovableEntity(){}
+SpriteImgMove *MovableEntity::getPSpriteMove() const
+{
+    return pSpriteMove;
+}
+
+void MovableEntity::setPSpriteMove(SpriteImgMove *value)
+{
+    pSpriteMove = value;
+}
+
+
+int MovableEntity::getId() const
+{
+    return id;
+}
+
+void MovableEntity::setId(int value)
+{
+    id = value;
+}

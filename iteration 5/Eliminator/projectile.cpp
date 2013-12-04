@@ -1,8 +1,8 @@
-/*
- * Author: Yann Battista
- * Date: 04/12/13
+/**
+ * @file projectile.cpp
+ * @author Yann Battista
+ * @date 04/12/13
  */
-
 #include "projectile.h"
 
 Projectile::Projectile()

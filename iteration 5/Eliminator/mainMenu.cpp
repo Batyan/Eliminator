@@ -41,9 +41,13 @@ void mainMenu::initMenu(){
     QAction *sizeAction = reglage->addAction(tr("Mode Plein écran"));
     sizeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F9));
 
+    QAction *miniAction = reglage->addAction(tr("Réduire Plein écran"));
+    miniAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_F10));
+
     QObject::connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(newAction, SIGNAL(triggered()), this, SLOT(backMainMenu()));
     connect(sizeAction, SIGNAL(triggered()), this, SLOT(fullscreen()));
+    connect(miniAction, SIGNAL(triggered()), this, SLOT(miniscreen()));
 
     m_layout = new QWidget(this);
     setCentralWidget(m_layout);
@@ -129,9 +133,9 @@ void mainMenu::initMenu(){
                   "border-radius: 7px;"
                   "border-color:  #496B8C;"
                   "height:25px"
-              "}"
+                  "}"
 
-  "QPushButton:hover{background-color: #12375C;}");
+                  "QPushButton:hover{background-color: #12375C;}");
 
     m_listSvg->setFixedHeight(130);
     m_listLvl->setFixedHeight(130);
@@ -256,7 +260,7 @@ void mainMenu::initMenu(){
     QObject::connect(m_loadSvg, SIGNAL(clicked()), this, SLOT(GameSoloLoad()));
 
     // quitte l'application
-   //connect(m_btn2, SIGNAL(triggered()), this, SLOT(quit()));
+    //connect(m_btn2, SIGNAL(triggered()), this, SLOT(quit()));
 
 
 }
@@ -283,15 +287,15 @@ void mainMenu::showMenu(){
 
 void mainMenu::showSoloMenu(){
 
-     delete m_layout->layout();
-     hideMenu();
+    delete m_layout->layout();
+    hideMenu();
 
-     m_solo->setVisible(true);
+    m_solo->setVisible(true);
 
-     QHBoxLayout *Hlayout = new QHBoxLayout();
+    QHBoxLayout *Hlayout = new QHBoxLayout();
 
-     Hlayout->addWidget(m_solo);
-     m_layout->setLayout(Hlayout);
+    Hlayout->addWidget(m_solo);
+    m_layout->setLayout(Hlayout);
 }
 
 
@@ -304,15 +308,15 @@ void mainMenu::hideSoloMenu(){
 
 void mainMenu::showOptionMenu(){
 
-     delete m_layout->layout();
-     hideMenu();
+    delete m_layout->layout();
+    hideMenu();
 
-     m_option->setVisible(true);
+    m_option->setVisible(true);
 
-     QHBoxLayout *Hlayout = new QHBoxLayout();
+    QHBoxLayout *Hlayout = new QHBoxLayout();
 
-     Hlayout->addWidget(m_option);
-     m_layout->setLayout(Hlayout);
+    Hlayout->addWidget(m_option);
+    m_layout->setLayout(Hlayout);
 }
 
 
@@ -333,15 +337,15 @@ void mainMenu::hideMultiMenu(){
 
 void mainMenu::showMultiMenu(){
 
-     delete m_layout->layout();
-     hideMenu();
+    delete m_layout->layout();
+    hideMenu();
 
-     m_multi->setVisible(true);
+    m_multi->setVisible(true);
 
-     QHBoxLayout *Hlayout = new QHBoxLayout();
+    QHBoxLayout *Hlayout = new QHBoxLayout();
 
-     Hlayout->addWidget(m_multi);
-     m_layout->setLayout(Hlayout);
+    Hlayout->addWidget(m_multi);
+    m_layout->setLayout(Hlayout);
 }
 
 void mainMenu::hideLoadMenu(){
@@ -354,15 +358,15 @@ void mainMenu::hideLoadMenu(){
 
 void mainMenu::showLoadMenu(){
 
-     delete m_layout->layout();
-     m_solo->setVisible(false);
+    delete m_layout->layout();
+    m_solo->setVisible(false);
 
-     m_loadMenu->setVisible(true);
+    m_loadMenu->setVisible(true);
 
-     QHBoxLayout *Hlayout = new QHBoxLayout();
+    QHBoxLayout *Hlayout = new QHBoxLayout();
 
-     Hlayout->addWidget(m_loadMenu);
-     m_layout->setLayout(Hlayout);
+    Hlayout->addWidget(m_loadMenu);
+    m_layout->setLayout(Hlayout);
 }
 
 void mainMenu::hideCreateMenu(){
@@ -375,15 +379,15 @@ void mainMenu::hideCreateMenu(){
 
 void mainMenu::showCreateMenu(){
 
-     delete m_layout->layout();
-     m_multi->setVisible(false);
+    delete m_layout->layout();
+    m_multi->setVisible(false);
 
-     m_creatMenu->setVisible(true);
+    m_creatMenu->setVisible(true);
 
-     QHBoxLayout *Hlayout = new QHBoxLayout();
+    QHBoxLayout *Hlayout = new QHBoxLayout();
 
-     Hlayout->addWidget(m_creatMenu);
-     m_layout->setLayout(Hlayout);
+    Hlayout->addWidget(m_creatMenu);
+    m_layout->setLayout(Hlayout);
 }
 
 void mainMenu::hideJoinMenu(){
@@ -396,15 +400,15 @@ void mainMenu::hideJoinMenu(){
 
 void mainMenu::showJoinMenu(){
 
-     delete m_layout->layout();
-     m_multi->setVisible(false);
+    delete m_layout->layout();
+    m_multi->setVisible(false);
 
-     m_joinMenu->setVisible(true);
+    m_joinMenu->setVisible(true);
 
-     QHBoxLayout *Hlayout = new QHBoxLayout();
+    QHBoxLayout *Hlayout = new QHBoxLayout();
 
-     Hlayout->addWidget(m_joinMenu);
-     m_layout->setLayout(Hlayout);
+    Hlayout->addWidget(m_joinMenu);
+    m_layout->setLayout(Hlayout);
 }
 
 void mainMenu::GameMulticonnect(){
@@ -459,6 +463,11 @@ void mainMenu::on_single_clicked(){
 
 void mainMenu::fullscreen(){
     showFullScreen();
+}
+
+void mainMenu::miniscreen()
+{
+    showNormal();
 }
 
 void mainMenu::backMainMenu(){

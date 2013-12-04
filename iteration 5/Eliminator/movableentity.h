@@ -10,6 +10,7 @@
 #define MOVABLEENTITY_H
 
 #include "entity.h"
+#include "spriteimgmove.h"
 
 /**
  * @author Guillaume Rasolo
@@ -20,97 +21,72 @@
 class MovableEntity : public Entity
 {
 private:
+    int id; /*!< @brief Identifiant de l'objet movable. */
     int dirMove;  /*!< @brief Valeur de la direction du mouvement à faire. */
     int animFrame;  /*!< @brief Valeur de la frame d'animation à faire. */
     int animDelta;  /*!< @brief Valeur de la frame par second. */
     int animTime; /*!< @brief Vitesse que prendra une animation de déplacement dans le temps. */
     qreal speedWalking; /*!< @brief Vitesse de déplacement de l'object.*/
+    SpriteImgMove * pSpriteMove; /*!< @brief Pointeur sur SpriteImgMove qui gère l'affichage d'une animation.*/
 public:
     /**
      * @brief Constructeur MovableEntity.
-     * @param x Coordonnée x qui sera donner à l'entity.
-     * @param y Coordonnée y qui sera donner à l'entity.
-     * @param width Largeur qui sera donner à l'entity.
-     * @param height Hauteur qui sera donner à l'entity.
      * @details On définie une MovableEntity, avec une position et une taille.
      */
     MovableEntity(qreal x, qreal y, int width, int height);
 
     /**
-     * @brief Desctucteur ~MovableEntity.
+     * @brief fonction IsInCollision
+     * @return Vrai si l'objet est en collision avec un autre.
      */
-    virtual ~MovableEntity();
+    bool IsInCollision();
 
+    //! @brief getId
+    int getId() const;
+    //! @brief setId
+    void setId(int value);
 
-    /**
-     * @brief isInCollision
-     * @return vrai si l'entity est en collision avec un autre objet.
-     */
-    bool isInCollision();
-
-
-    /**
-     * @brief getDirMove
-     * @return
-     */
+    //! @brief getDirMove
     int getDirMove() const;
-
-    /**
-     * @brief setDirMove
-     * @param value
-     */
+    //! @brief setDirMove
     void setDirMove(int value);
 
-    /**
-     * @brief getAnimFrame
-     * @return
-     */
+    //! @brief getAnimFrame
     int getAnimFrame() const;
-
-    /**
-     * @brief setAnimFrame
-     * @param value
-     */
+    //! @brief setAnimFrame
     void setAnimFrame(int value);
 
-    /**
-     * @brief getAnimDelta
-     * @return
-     */
+    //! @brief getAnimDelta
     int getAnimDelta() const;
-
-    /**
-     * @brief setAnimDelta
-     * @param value
-     */
+    //! @brief setAnimDelta
     void setAnimDelta(int value);
 
-    /**
-     * @brief getAnimTime
-     * @return
-     */
+    //! @brief getAnimTime
     int getAnimTime() const;
-
-    /**
-     * @brief setAnimTime
-     * @param value
-     */
+    //! @brief setAnimTime
     void setAnimTime(int value);
 
-    /**
-     * @brief getSpeedWalking
-     * @return
-     */
+    //! @brief getSpeedWalking
     qreal getSpeedWalking() const;
+    //! @brief setSpeedWalking
+    void setSpeedWalking(const qreal &value);
+
+    //! @brief getPSpriteMove
+    SpriteImgMove *getPSpriteMove() const;
+    //! @brief setPSpriteMove
+    void setPSpriteMove(SpriteImgMove *value);
+
+private:
+    /**
+     * @brief ifIcantMove
+     * @return Vrai si l'objet est en collision du a un déplacement.
+     */
+    bool ifIcantMove(const QGraphicsItem * item);
 
     /**
-     * @brief setSpeedWalking
-     * @param value
+     * @brief intersectItems
+     * @return Vrai si l'objet "item" est en collision avec les deux points passé en parametre.
      */
-    void setSpeedWalking(const qreal &value);
-    bool IsInCollision();
-private:
-    bool ifIcantMove(const QGraphicsItem * item);
     bool intersectItems(const QGraphicsItem * item, const QPointF& Point1, const QPointF & Point2);
 };
 

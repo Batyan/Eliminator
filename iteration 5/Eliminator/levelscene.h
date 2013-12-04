@@ -84,15 +84,11 @@ public slots:
     void advance();
 
 private:
-    /**
-     * @brief loadWorld
-     * @details Permet de charger un niveau.
-     */
-    void loadWorld();
+    void loadWorld();/*!< @brief Permet de charger le niveau.*/
 
-    void setLevel(int id);
+    void setLevel(int id);/*!< @brief Permet de changer de niveau.*/
 
-    void clear();
+    void clear();/*!< @brief Permet d'effacer  les objets contenus dans la scène.*/
 
 };
 

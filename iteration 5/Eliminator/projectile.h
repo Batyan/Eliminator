@@ -1,3 +1,9 @@
+/**
+ * @file projectile.h
+ * @author Yann Battista
+ * @date 04/12/13
+ */
+
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 
@@ -6,6 +12,7 @@
 #include <QPoint>
 #include "movableentity.h"
 #include "levelscene.h"
+
 
 class Projectile : public Entity
 {
@@ -23,7 +30,6 @@ private:
 
 private:
     qreal speed;
-
     QPoint dir;
 };
 
