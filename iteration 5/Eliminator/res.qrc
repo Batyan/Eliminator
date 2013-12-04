@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/characters.png</file>
+        <file>res/TileMap/terrain.png</file>
+        <file>res/TileMap/background.png</file>
+        <file>res/level/Level_1.xml</file>
+        <file>res/level/Level_2.xml</file>
+        <file>res/background/bg_1.png</file>
+        <file>res/level/Level_3.xml</file>
+        <file>res/level/Level_4.xml</file>
+        <file>res/level/Level_5.xml</file>
+        <file>res/background/bg_2.png</file>
+        <file>res/background/bg_3.png</file>
+        <file>res/background/bg_4.png</file>
+        <file>res/background/bg_5.png</file>
+        <file>res/Ennemy/1.png</file>
+        <file>res/Ennemy/2.png</file>
+        <file>res/Ennemy/3.png</file>
+        <file>res/Ennemy/4.png</file>
+        <file>res/Ennemy/5.png</file>
+        <file>res/Ennemy/6.png</file>
+        <file>res/Ennemy/7.png</file>
+        <file>res/background/bg_6.png</file>
+        <file>res/level/Level_6.xml</file>
+        <file>res/level/Level_7.xml</file>
+        <file>res/level/Level_8.xml</file>
+        <file>res/background/bg_7.png</file>
+        <file>res/background/bg_8.png</file>
+        <file>res/elim_v3.png</file>
+    </qresource>
+</RCC>
